@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domande Frequenti - kAIboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        .question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .answer {
+            margin-bottom: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        ol li {
+            margin: 8px 0;
+        }
+        .contact-box {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .important {
+            background-color: #f8d7da;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Domande Frequenti - kAIboard</h1>
+
+<p><strong>Ultimo aggiornamento:</strong> 7 marzo 2026</p>
+<p><strong>Versione:</strong> 1.0</p>
+
+<h2>Per iniziare</h2>
+
+<p class="question">Perché kAIboard ha bisogno del permesso Contatti?</p>
+<p class="answer">kAIboard legge i tuoi contatti per associare la persona con cui stai chattando al suo numero di telefono. Dal prefisso internazionale del numero (es. +49 per la Germania) determina la lingua da impostare. I nomi e i numeri di telefono dei contatti non vengono mai salvati in modo permanente — vengono usati solo nel momento in cui serve rilevare la lingua.</p>
+
+<p class="question">Perché kAIboard ha bisogno del permesso Accessibilità?</p>
+<p class="answer">Questo permesso consente a kAIboard di rilevare con quale contatto stai chattando nelle app di messaggistica come WhatsApp, Telegram o Signal. Senza di esso, il cambio automatico della lingua non può funzionare. kAIboard legge solo il titolo della conversazione (il nome del contatto) — non legge mai i tuoi messaggi.</p>
+
+<p class="question">Come configuro kAIboard dopo l'installazione?</p>
+<div class="answer">
+    <ol>
+        <li>Apri l'app kAIboard</li>
+        <li>Abilita kAIboard come metodo di input nelle impostazioni tastiera del dispositivo</li>
+        <li>Imposta kAIboard come tastiera predefinita</li>
+        <li>Concedi il permesso Contatti quando richiesto</li>
+        <li>Abilita il servizio di Accessibilità quando richiesto</li>
+        <li>Nelle impostazioni dell'app, abilita l'Accesso alle Notifiche (necessario per il cambio automatico della lingua nelle risposte rapide dalle notifiche)</li>
+        <li>Nelle impostazioni dell'app, abilita le Impostazioni Notifiche (necessarie per avvisi sull'utilizzo, come gli avvisi sul limite token per la Traduzione AI)</li>
+        <li>Inizia a chattare — la lingua cambia automaticamente!</li>
+    </ol>
+</div>
+
+<p class="question">Devo scaricare qualcosa in più?</p>
+<p class="answer">I dizionari e i modelli predittivi vengono scaricati su richiesta. Quando usi una lingua per la prima volta, kAIboard scaricherà i file necessari. Puoi gestire i download dalla schermata Modelli Offline all'interno dell'app.</p>
+
+<h2>Funzionalità</h2>
+
+<p class="question">Come funziona il cambio automatico della lingua?</p>
+<p class="answer">Quando apri una chat, kAIboard rileva il nome del contatto, cerca il suo numero di telefono nella rubrica e legge il prefisso internazionale. Per esempio, +39 significa italiano, +49 tedesco, +33 francese. Il layout della tastiera cambia automaticamente in circa 65 millisecondi. Puoi anche impostare o cambiare la lingua per qualsiasi contatto manualmente nella schermata Gestione Contatti all'interno dell'app, oppure tenendo premuta la barra spaziatrice direttamente dalla tastiera.</p>
+
+<p class="question">Cosa succede se ho due contatti con lo stesso nome?</p>
+<p class="answer">kAIboard mostrerà un dialog che ti chiede di scegliere il contatto corretto. La tua scelta viene ricordata per la sessione corrente, quindi non ti verrà chiesto di nuovo fino al riavvio del servizio tastiera.</p>
+
+<p class="question">Come funziona la Traduzione AI?</p>
+<p class="answer">Tieni premuto il tasto Invio per attivare la traduzione per una chat specifica. L'icona del tasto Invio cambia per indicare che la traduzione è attiva. Digita il messaggio normalmente, poi premi Invio — il tuo testo viene tradotto nella lingua del contatto e sostituisce quello che hai digitato. Tieni premuto Invio di nuovo per disattivare. La traduzione richiede un abbonamento attivo.</p>
+
+<p class="question">kAIboard funziona con le chat di gruppo?</p>
+<p class="answer">Sì. Per le chat di gruppo dove non c'è un contatto individuale da rilevare, puoi assegnare manualmente una lingua. kAIboard ricorda la tua scelta utilizzando un hash sicuro per la privacy — il nome del gruppo non viene mai salvato.</p>
+
+<p class="question">Quali app di messaggistica sono supportate?</p>
+<p class="answer">Oltre 120 app, tra cui WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack e molte altre — incluse app di incontri, ride-hailing, consegna cibo e marketplace. Funziona anche con le risposte rapide dalle notifiche.</p>
+
+<h2>Privacy e Dati</h2>
+
+<p class="question">Quali dati raccoglie kAIboard?</p>
+<p class="answer">kAIboard segue un approccio local-first. Rilevamento contatti, autocorrezione, predizioni e preferenze linguistiche avvengono tutti sul tuo dispositivo. L'unico dato inviato esternamente è il testo che scegli di tradurre (tramite connessione HTTPS sicura), e non viene mai salvato su nessun server. Nessuna analisi, nessun tracciamento, nessun ID pubblicitario.</p>
+
+<p class="question">kAIboard è conforme al GDPR?</p>
+<p class="answer">Sì. kAIboard offre quattro opzioni nella sezione Privacy: esportare i tuoi dati in formato JSON, eliminare solo i dati di apprendimento, eliminare tutti i dati locali, oppure eliminare tutti i dati cloud. I dati cloud (informazioni sull'abbonamento) vengono eliminati automaticamente dopo 90–365 giorni. I report crash sono facoltativi e richiedono consenso esplicito.</p>
+
+<p class="question">Posso eliminare tutti i miei dati?</p>
+<div class="answer">
+    <p>Sì. Vai in Impostazioni → Privacy e usa i pulsanti disponibili. Puoi esportare i tuoi dati in formato JSON, eliminare i dati di apprendimento, eliminare tutti i dati locali o eliminare i dati cloud separatamente. Disinstallare l'app rimuove automaticamente tutti i dati locali.</p>
+    <div class="important">
+        <strong>Nota:</strong> Se annulli l'abbonamento ed elimini i dati cloud durante il periodo residuo già pagato (grace period), l'eliminazione è immediata e comporta la rinuncia definitiva al periodo residuo e al saldo token corrente. Allo stesso modo, se disinstalli l'app o esegui un ripristino di fabbrica durante questo grace period, i giorni rimanenti e il saldo token vengono persi definitivamente perché Google Play non ripristina gli abbonamenti cancellati volontariamente su una nuova installazione.
+    </div>
+</div>
+
+<h2>Prezzi e Abbonamento</h2>
+
+<p class="question">Quanto costa kAIboard?</p>
+<p class="answer">kAIboard è un acquisto una tantum di €2,39 (tasse incluse). Include tutte le funzionalità principali: cambio automatico della lingua, autocorrezione intelligente, predizione della parola successiva, picker emoji, gestione lingue contatti e backup locale.</p>
+
+<p class="question">Cosa aggiunge l'abbonamento?</p>
+<p class="answer">L'abbonamento mensile opzionale sblocca due funzionalità premium: Traduzione AI (powered by OpenAI) e backup su Google Drive. Sono disponibili tre piani in base all'utilizzo mensile di traduzioni: Plus (€3,49/mese — ~2.130 traduzioni), Pro (€5,99/mese — ~4.200 traduzioni) e Max (€9,49/mese — ~8.530 traduzioni).</p>
+
+<p class="question">Posso usare il mio abbonamento su più dispositivi?</p>
+<p class="answer">Sì. Il tuo saldo token si sincronizza su tutti i dispositivi che usano lo stesso account Google Play. Il limite mensile di token è condiviso — per esempio, se hai 250.000 token con il piano Plus, quel totale è condiviso tra tutti i tuoi dispositivi.</p>
+
+<p class="question">Cosa succede se annullo l'abbonamento e reinstallo l'app?</p>
+<div class="answer">
+    <div class="important">
+        <strong>Importante:</strong> Se annulli l'abbonamento e successivamente disinstalli l'app o esegui un ripristino di fabbrica durante il periodo residuo già pagato (grace period), i giorni rimanenti e il saldo token corrente non potranno essere recuperati. Questo accade perché Google Play non restituisce gli abbonamenti cancellati volontariamente su una nuova installazione. Assicurati di utilizzare i token rimanenti prima di disinstallare. Se reinstalli senza aver cancellato l'abbonamento, il ripristino avviene normalmente tramite Google Play.
+    </div>
+</div>
+
+<p class="question">Come funziona il backup?</p>
+<p class="answer">kAIboard offre due opzioni di backup. Tutti gli utenti possono creare un backup locale delle proprie impostazioni e dati di apprendimento. Gli abbonati possono anche eseguire il backup sul proprio Google Drive personale. In entrambi i casi, il saldo token di traduzione viene sempre sincronizzato dal cloud — non viene mai salvato nel file di backup, per prevenire duplicazioni.</p>
+
+<h2>Predizione e Autocorrezione</h2>
+
+<p class="question">Quanto sono buone le predizioni di kAIboard rispetto ad altre tastiere?</p>
+<p class="answer">Il motore predittivo di kAIboard è costruito su basi solide: modelli linguistici statistici, dizionari completi e un sistema di apprendimento personalizzato che migliora con ogni parola che digiti — tutto funziona interamente sul tuo dispositivo senza alcuna dipendenza dal cloud. Detto questo, kAIboard è sviluppata da un singolo sviluppatore. Le grandi aziende tech hanno team dedicati di centinaia di ingegneri che lavorano su modelli neurali addestrati su miliardi di dati. Le predizioni di kAIboard sono solide e migliorano notevolmente con l'uso, ma non pretendo di eguagliare quella scala. Ciò che distingue veramente kAIboard è qualcosa che nessun'altra tastiera fa: sapere di quale lingua hai bisogno prima ancora che tu digiti un singolo carattere.</p>
+
+<p class="question">Perché l'autocorrezione non sostituisce le parole automaticamente?</p>
+<p class="answer">Per scelta progettuale. L'autocorrezione di kAIboard è intenzionalmente conservativa — suggerisce le correzioni nella barra dei suggerimenti anziché sostituire forzatamente le parole. Non c'è niente di più frustrante di una tastiera che sovrascrive quello che volevi effettivamente digitare. Il controllo resta a te.</p>
+
+<h2>Risoluzione problemi</h2>
+
+<p class="question">La tastiera non cambia lingua automaticamente.</p>
+<p class="answer">Assicurati che sia il permesso Contatti che il servizio di Accessibilità siano abilitati. Verifica che il contatto abbia un numero di telefono con prefisso internazionale nella tua rubrica.</p>
+
+<p class="question">La traduzione non funziona.</p>
+<p class="answer">Verifica di avere un abbonamento attivo e che il toggle della traduzione sia attivo (il tasto Invio dovrebbe mostrare l'icona di traduzione ⇄). Hai anche bisogno di una connessione internet per la traduzione.</p>
+
+<div class="contact-box">
+    <p class="question">Hai bisogno di aiuto?</p>
+    <p>Contattaci a <a href="mailto:support@kaiboard.eu">support@kaiboard.eu</a> — rispondiamo entro 30 giorni.</p>
+</div>
+
+<p style="text-align: center; color: #7f8c8d; margin-top: 50px;">
+    <strong>Versione 1.0 - Ultimo aggiornamento: 7 marzo 2026</strong><br>
+    © 2026 Alessandro Faedda - kAIboard
+</p>
+
+</body>
+</html>

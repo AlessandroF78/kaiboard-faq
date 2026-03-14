@@ -15,14 +15,15 @@
         .contact-box { background-color: #e8f4f8; padding: 20px; border-radius: 5px; margin: 20px 0; }
         .highlight { background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; }
         .important { background-color: #f8d7da; padding: 15px; border-left: 4px solid #dc3545; margin: 20px 0; }
+        .info { background-color: #d1ecf1; padding: 15px; border-left: 4px solid #17a2b8; margin: 20px 0; }
     </style>
 </head>
 <body>
 
 <h1>Często zadawane pytania - kAIboard</h1>
 
-<p><strong>Ostatnia aktualizacja:</strong> 7 marca 2026</p>
-<p><strong>Wersja:</strong> 1.0</p>
+<p><strong>Ostatnia aktualizacja:</strong> 14 marca 2026</p>
+<p><strong>Wersja:</strong> 1.1</p>
 
 <h2>Pierwsze kroki</h2>
 
@@ -39,7 +40,7 @@
         <li>Włącz kAIboard jako metodę wprowadzania w ustawieniach klawiatury urządzenia</li>
         <li>Ustaw kAIboard jako domyślną klawiaturę</li>
         <li>Przyznaj uprawnienie do Kontaktów, gdy zostaniesz o to poproszony</li>
-        <li>Włącz usługę Ułatwień dostępu, gdy zostaniesz o to poproszony</li>
+        <li>Włącz obie usługi Ułatwień dostępu: kAIboard korzysta z dwóch (jednej do wykrywania aktywnego kontaktu w czatach, drugiej do obsługi aplikacji z niestandardowymi interfejsami). Obie muszą być włączone, aby automatyczne przełączanie działało prawidłowo. Przy uruchomieniu aplikacji wyskakujące okno przypomni Ci, jakich uprawnień brakuje, a dotknięcie go przeniesie Cię bezpośrednio do sekcji uprawnień w ustawieniach urządzenia</li>
         <li>W ustawieniach aplikacji włącz Dostęp do powiadomień (wymagany do automatycznego przełączania języków w szybkich odpowiedziach z powiadomień)</li>
         <li>W ustawieniach aplikacji włącz Ustawienia powiadomień (wymagane do alertów o użyciu, np. ostrzeżeń o limicie tokenów dla Tłumaczenia AI)</li>
         <li>Zacznij pisać — język przełącza się automatycznie!</li>
@@ -47,18 +48,21 @@
 </div>
 
 <p class="question">Czy muszę coś dodatkowego pobrać?</p>
-<p class="answer">Słowniki i modele predykcyjne są pobierane na żądanie. Gdy po raz pierwszy użyjesz danego języka, kAIboard pobierze niezbędne pliki. Pobranymi plikami możesz zarządzać z ekranu Modele offline w aplikacji.</p>
+<div class="answer">
+    <p>Słowniki do autokorekty są już zawarte w aplikacji dla wszystkich 13 języków — nie musisz niczego pobierać, aby korzystać z autokorekty. Do przewidywania następnego słowa trzeba jednak pobrać model predykcyjny dla każdego języka, którego chcesz używać. Gdy po raz pierwszy użyjesz danego języka, możesz pobrać model z ekranu Modele offline w aplikacji: dotknij niebieskiego przycisku „Pobierz" obok wybranego języka. Po pobraniu przycisk zmieni kolor na czerwony „Usuń", gdybyś chciał zwolnić miejsce usuwając języki, których już nie używasz. Najczęściej używane języki są wstępnie ładowane do pamięci, aby zapewnić natychmiastowe przełączanie.</p>
+    <p>Jeśli zauważysz, że przewidywania nie działają dla konkretnego języka, sprawdź na ekranie Modele offline, czy model predykcyjny został pobrany dla tego języka.</p>
+</div>
 
 <h2>Funkcje</h2>
 
 <p class="question">Jak działa automatyczne przełączanie języków?</p>
-<p class="answer">Gdy otworzysz czat, kAIboard wykrywa nazwę kontaktu, wyszukuje numer telefonu w kontaktach i odczytuje międzynarodowy numer kierunkowy. Na przykład +48 oznacza polski, +49 niemiecki, +33 francuski. Układ klawiatury zmienia się automatycznie w około 65 milisekund. Możesz również ręcznie ustawić lub zmienić język dla dowolnego kontaktu na ekranie Zarządzanie kontaktami w aplikacji lub przytrzymując spację bezpośrednio na klawiaturze.</p>
+<div class="answer">
+    <p>Gdy otworzysz czat, kAIboard wykrywa nazwę kontaktu, wyszukuje numer telefonu w kontaktach i odczytuje międzynarodowy numer kierunkowy. Na przykład +39 oznacza włoski, +49 niemiecki, +33 francuski. Układ klawiatury zmienia się automatycznie w około 65 milisekund. System używa wielopoziomowego łańcucha priorytetów: najpierw sprawdza, czy ręcznie ustawiłeś język dla tego kontaktu w tej konkretnej aplikacji, potem czy masz ustawienie globalne dla tego kontaktu, następnie automatyczne wykrywanie z numeru kierunkowego, a na końcu język systemowy urządzenia jako rozwiązanie awaryjne.</p>
+    <p>Możesz również ręcznie ustawić lub zmienić język dla dowolnego kontaktu na dwa sposoby: z ekranu Zarządzanie kontaktami w aplikacji (gdzie możesz zobaczyć i edytować język przypisany do każdego kontaktu z książki adresowej), lub przytrzymując spację bezpośrednio na klawiaturze podczas czatu (pojawia się menu z dostępnymi językami, a Twój wybór zostaje zapisany dla tego kontaktu).</p>
+</div>
 
 <p class="question">Co się stanie, jeśli mam dwa kontakty o tej samej nazwie?</p>
 <p class="answer">kAIboard wyświetli okno dialogowe z prośbą o wybranie właściwego kontaktu. Twój wybór jest zapamiętywany na czas bieżącej sesji, więc nie zostaniesz ponownie zapytany do momentu ponownego uruchomienia usługi klawiatury.</p>
-
-<p class="question">Jak działa Tłumaczenie AI?</p>
-<p class="answer">Przytrzymaj klawisz Enter, aby aktywować tłumaczenie dla konkretnego czatu. Ikona klawisza Enter zmieni się, aby wskazać, że tłumaczenie jest aktywne. Wpisz wiadomość normalnie, a następnie naciśnij Enter — Twój tekst zostanie przetłumaczony na język kontaktu i zastąpi to, co wpisałeś. Przytrzymaj Enter ponownie, aby dezaktywować. Tłumaczenie wymaga aktywnej subskrypcji.</p>
 
 <p class="question">Czy kAIboard działa w czatach grupowych?</p>
 <p class="answer">Tak. W czatach grupowych, gdzie nie ma pojedynczego kontaktu do wykrycia, możesz ręcznie przypisać język. kAIboard zapamiętuje Twój wybór za pomocą bezpiecznego skrótu (hash) — nazwa grupy nigdy nie jest zapisywana.</p>
@@ -66,20 +70,72 @@
 <p class="question">Jakie aplikacje do przesyłania wiadomości są obsługiwane?</p>
 <p class="answer">Ponad 120 aplikacji, w tym WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack i wiele innych — w tym aplikacje randkowe, transportowe, do zamawiania jedzenia i marketplace. Działa również z szybkimi odpowiedziami z powiadomień.</p>
 
+<div class="info">
+    <p class="question">Uwaga dotycząca Telegram</p>
+    <p>Telegram wewnętrznie zarządza nazwami kontaktów, pseudonimami i identyfikatorami numerycznymi inaczej niż inne aplikacje do przesyłania wiadomości. Ze względu na to specyficzne zachowanie Telegrama, możesz czasami zauważyć krótkie migotanie języka systemowego podczas wchodzenia lub ponownego wchodzenia do czatu z kontaktem wykrytym automatycznie na podstawie numeru telefonu z książki adresowej. Migotanie szybko ustępuje i system ustawia prawidłowy język wkrótce potem. Dla kontaktów, którym ręcznie przypisałeś język (przez ekran Zarządzanie kontaktami lub przytrzymanie spacji), przełączanie języka powinno działać płynnie i bez opóźnień, nawet na Telegramie. To zachowanie jest spowodowane sposobem, w jaki Telegram przekazuje informacje o kontaktach do systemu, i nie jest problemem kAIboard. W innych aplikacjach do przesyłania wiadomości (WhatsApp, Signal, Messenger i inne) przełączanie języka powinno działać płynnie zarówno dla kontaktów automatycznych, jak i ręcznych.</p>
+</div>
+
+<h2>Tłumaczenie AI</h2>
+
+<p class="question">Jak działa Tłumaczenie AI?</p>
+<div class="answer">
+    <p>Tłumaczenie AI w kAIboard działa z dwoma poziomami sterowania:</p>
+    <p><strong>1. Przełącznik ogólny (w Ustawieniach aplikacji):</strong> To jest główny przełącznik. Gdy jest wyłączony, żaden czat nie może tłumaczyć, a wszystkie ustawienia tłumaczenia dla poszczególnych czatów zostają zresetowane. Po ponownym włączeniu musisz ponownie aktywować tłumaczenie dla każdego czatu nowym długim naciśnięciem klawisza Enter. To celowe: zapobiega ponownemu aktywowaniu tłumaczenia w zapomnianych czatach, co zużywałoby tokeny bez Twojej wiedzy.</p>
+    <p><strong>2. Aktywacja dla poszczególnych czatów (długie naciśnięcie klawisza Enter):</strong> Przy włączonym przełączniku ogólnym przytrzymaj klawisz Enter, aby aktywować tłumaczenie dla danej rozmowy. Ikona klawisza zmienia się z „↩" (normalne Enter) na „⇄" (tłumaczenie aktywne). Drugie długie naciśnięcie dezaktywuje tłumaczenie dla tego czatu. Preferencja jest zapisywana dla każdego kontaktu: przy następnym otwarciu tego samego czatu tłumaczenie będzie nadal aktywne (lub nieaktywne), tak jak je zostawiłeś.</p>
+    <p><strong>Jak tłumaczyć:</strong> Po aktywowaniu tłumaczenia wpisz wiadomość normalnie w swoim języku. Gdy naciśniesz klawisz Enter na klawiaturze kAIboard, tekst zostanie automatycznie przetłumaczony na język kontaktu przed wysłaniem. Następnie użyj przycisku wysyłania aplikacji do przesyłania wiadomości (obok paska tekstu), aby wysłać przetłumaczoną wiadomość. Tłumaczenie następuje tylko po naciśnięciu klawisza Enter na klawiaturze — możesz swobodnie pisać, włącznie ze znakami interpunkcyjnymi, bez przerw.</p>
+    <p>Tłumaczenie wymaga aktywnej subskrypcji i połączenia z internetem. Tłumaczony jest tylko tekst wychodzący (to, co wpisujesz) — kAIboard nie czyta, nie przechwytuje i w żaden sposób nie przetwarza wiadomości przychodzących. Ten wybór jest celowy, aby zapewnić maksymalną prywatność: klawiatura nie ma dostępu do treści otrzymywanych rozmów.</p>
+</div>
+
+<p class="question">Co się dzieje z kontaktami w językach niełacińskich (rosyjski, ukraiński, grecki, gruziński)?</p>
+<div class="answer">
+    <p>Gdy tłumaczenie jest aktywne dla kontaktu, którego język używa niełacińskiego alfabetu (rosyjski, ukraiński, grecki, gruziński), klawiatura powinna automatycznie przełączyć się na układ w języku systemowym urządzenia (np. polski), abyś mógł wygodnie pisać. Piszesz w swoim języku, a tłumaczenie zajmie się konwersją tekstu na alfabet i język kontaktu po naciśnięciu Enter.</p>
+    <p>Gdy tłumaczenie zostanie dezaktywowane dla tego samego kontaktu (drugim długim naciśnięciem Enter), układ powinien automatycznie wrócić do natywnego alfabetu kontaktu (cyrylica, grecki lub gruziński).</p>
+    <div class="info">
+        <strong>Uwaga:</strong> Ta funkcja jest obecna w aplikacji, ale nie została jeszcze dokładnie przetestowana. W niektórych przypadkach automatyczne przełączanie układu może nie działać zgodnie z oczekiwaniami. Jeśli napotkasz problemy, skontaktuj się z nami pod adresem support@kaiboard.eu.
+    </div>
+</div>
+
+<p class="question">Czy tłumaczenie jest bezpieczne? Czy moje wiadomości są zapisywane?</p>
+<div class="answer">
+    <p>Tekst jest bezpiecznie przesyłany przez szyfrowane połączenie HTTPS do przekaźnika Cloudflare, który przekazuje go do API OpenAI w celu tłumaczenia. Tekst nigdy nie jest zapisywany na żadnym serwerze — przechodzi i jest natychmiast zwracany. Klucz API OpenAI nigdy nie jest ujawniany na Twoim urządzeniu.</p>
+    <div class="highlight">
+        <strong>Przejrzystość w kwestii OpenAI:</strong> kAIboard korzysta z OpenAI jako zewnętrznego dostawcy tłumaczeń. OpenAI publicznie oświadcza, że dane przesyłane przez API nie są wykorzystywane do trenowania ich modeli. Standardowe Klauzule Umowne dotyczące transferu danych poza UE obowiązują. Jednak obecnie nie posiadamy formalnej Umowy o przetwarzanie danych (DPA) z OpenAI. Zalecamy unikanie tłumaczenia bardzo wrażliwych informacji (dane zdrowotne, finansowe, prawne). Więcej informacji znajdziesz w <a href="https://openai.com/enterprise-privacy" target="_blank">polityce prywatności API OpenAI</a>.
+    </div>
+</div>
+
+<h2>Przewidywanie i autokorekta</h2>
+
+<p class="question">Jak dobre są przewidywania kAIboard w porównaniu z innymi klawiaturami?</p>
+<p class="answer">Silnik przewidywania kAIboard jest zbudowany na solidnych fundamentach: statystyczne modele językowe, kompletne słowniki i spersonalizowany system uczenia się, który poprawia się z każdym wpisanym słowem — wszystko działa całkowicie na Twoim urządzeniu bez żadnej zależności od chmury. Trzeba jednak przyznać, że kAIboard jest tworzone przez jednego programistę. Duże firmy technologiczne dysponują zespołami setek inżynierów pracujących nad modelami neuronowymi trenowanymi na miliardach danych. Przewidywania kAIboard są solidne i zauważalnie poprawiają się z użytkowaniem, ale nie będę udawać, że dorównuję tej skali. To, co naprawdę wyróżnia kAIboard, to coś, czego żadna inna klawiatura nie robi: wiedzieć, jakiego języka potrzebujesz, zanim wpiszesz choćby jeden znak.</p>
+
+<p class="question">Jak działa autokorekta?</p>
+<div class="answer">
+    <p>Autokorekta kAIboard wykorzystuje system wieloczynnikowy, który analizuje odległość edycji między wpisanym słowem a kandydatami ze słownika, kontekst zdania (poprzednie słowa), rzeczywistą częstotliwość użycia słów, bliskość klawiszy na klawiaturze oraz Twoje osobiste nawyki pisania. System obsługuje korektę transpozycji (odwrócone litery), brakujących podwójnych liter, przypadkowo naciśniętych sąsiednich klawiszy i brakujących znaków diakrytycznych — we wszystkich 13 obsługiwanych językach.</p>
+    <p>Autokorekta jest celowo zachowawcza: pokazuje korekty na pasku sugestii i automatycznie je stosuje tylko wtedy, gdy system jest wystarczająco pewny. Nie ma nic bardziej frustrującego niż klawiatura, która nadpisuje to, co naprawdę chciałeś napisać. Ty zachowujesz kontrolę.</p>
+</div>
+
+<p class="question">Czy kAIboard uczy się z moich nawyków pisania?</p>
+<p class="answer">Tak. System uczenia się rejestruje słowa, których najczęściej używasz, najczęstsze kombinacje słów i nazwy własne, które wpisujesz. Sugestie poprawiają się z czasem dzięki inteligentnemu systemowi zanikania, który utrzymuje ostatnie nawyki jako bardziej istotne niż stare. Uczenie następuje tylko wtedy, gdy dotkniesz sugestii z paska — automatyczne korekty nie są rejestrowane, aby zapobiec uczeniu się błędów korekty jako nawyków. Wszystkie dane nauki pozostają na Twoim urządzeniu i mogą być usunięte w dowolnym momencie.</p>
+
 <h2>Prywatność i dane</h2>
 
 <p class="question">Jakie dane zbiera kAIboard?</p>
 <p class="answer">kAIboard stosuje podejście local-first. Wykrywanie kontaktów, autokorekta, przewidywania i preferencje językowe — wszystko odbywa się na Twoim urządzeniu. Jedyne dane wysyłane na zewnątrz to tekst, który wybierzesz do przetłumaczenia (za pośrednictwem bezpiecznego połączenia HTTPS), i nigdy nie jest on zapisywany na żadnym serwerze. Brak analityki, brak śledzenia, brak identyfikatorów reklamowych.</p>
 
 <p class="question">Czy kAIboard jest zgodny z RODO?</p>
-<p class="answer">Tak. kAIboard oferuje cztery opcje w sekcji Prywatność: eksport danych w formacie JSON, usunięcie tylko danych nauki, usunięcie wszystkich danych lokalnych lub usunięcie wszystkich danych w chmurze. Dane w chmurze (informacje o subskrypcji) są automatycznie usuwane po 90–365 dniach. Raporty o awariach są opcjonalne i wymagają wyraźnej zgody.</p>
+<div class="answer">
+    <p>Tak. kAIboard oferuje cztery opcje w sekcji Prywatność: eksport danych w formacie JSON, usunięcie tylko danych nauki, usunięcie wszystkich danych lokalnych lub usunięcie wszystkich danych w chmurze. Dane w chmurze (informacje o subskrypcji) są automatycznie usuwane po 90–365 dniach nieaktywności.</p>
+    <p>Raporty o awariach (crash reports) są całkowicie opcjonalne: możesz je włączyć lub wyłączyć w dowolnym momencie w Ustawieniach. Przy pierwszym włączeniu wyświetlany jest dialog potwierdzający. Raporty o awariach zawierają wyłącznie informacje techniczne o błędach i metadane urządzenia — nigdy nie zawierają wpisanego tekstu, nazw kontaktów ani innych danych osobowych.</p>
+</div>
+
+<p class="question">Czym są dzienniki administratora widoczne w aplikacji?</p>
+<div class="answer">
+    <p>Aby zapewnić maksymalną przejrzystość, kAIboard automatycznie rejestruje dziennik za każdym razem, gdy na Twoim koncie zostanie dokonana zmiana od strony serwera — na przykład w przypadku zwrotu tokenów z powodu sporu lub problemu technicznego. Te dzienniki są widoczne w odpowiedniej sekcji w aplikacji, abyś mógł w każdej chwili sprawdzić, czy i kiedy wykonano operację na Twoim koncie. Jeśli nie ma dzienników, oznacza to, że nigdy nie dokonano żadnej zmiany od strony serwera. Dzienniki administratora są automatycznie usuwane zgodnie z polityką retencji danych, lub możesz je ręcznie usunąć przyciskiem „Usuń dane w chmurze" w sekcji Prywatność.</p>
+</div>
 
 <p class="question">Czy mogę usunąć wszystkie moje dane?</p>
 <div class="answer">
     <p>Tak. Przejdź do Ustawienia → Prywatność i użyj dostępnych przycisków. Możesz wyeksportować dane w formacie JSON, usunąć dane nauki, wszystkie dane lokalne lub dane w chmurze osobno. Odinstalowanie aplikacji automatycznie usuwa wszystkie dane lokalne.</p>
-    <div class="important">
-        <strong>Uwaga:</strong> Jeśli anulujesz subskrypcję i usuniesz dane w chmurze w trakcie pozostałego, już opłaconego okresu (okres karencji), usunięcie jest natychmiastowe i bezpowrotnie rezygnujesz z pozostałego okresu oraz bieżącego salda tokenów. Podobnie, jeśli odinstalujesz aplikację lub wykonasz przywracanie ustawień fabrycznych w trakcie tego okresu karencji, pozostałe dni i saldo tokenów zostaną trwale utracone, ponieważ Google Play nie przywraca dobrowolnie anulowanych subskrypcji przy nowej instalacji.
-    </div>
 </div>
 
 <h2>Ceny i subskrypcja</h2>
@@ -95,21 +151,15 @@
 
 <p class="question">Co się stanie, jeśli anuluję subskrypcję i ponownie zainstaluję aplikację?</p>
 <div class="answer">
+    <p><strong>Z aktywną subskrypcją (nieanulowaną):</strong> Jeśli odinstalujesz i ponownie zainstalujesz aplikację, lub zainstalujesz ją na nowym urządzeniu lub na wielu urządzeniach z tym samym kontem Google, subskrypcja i saldo tokenów synchronizują się automatycznie przez Google Play i Firebase. Nie musisz nic robić — przywrócenie następuje automatycznie przy pierwszym uruchomieniu.</p>
+    <p><strong>Z anulowaną subskrypcją (okres karencji):</strong> Jeśli ponownie zainstalujesz aplikację na tym samym urządzeniu, system znajdzie subskrypcję i saldo tokenów przez Firebase i automatycznie je przywróci, nawet w trakcie okresu karencji. Na innych urządzeniach, na których aplikacja była już zainstalowana z tym samym kontem, przywrócenie powinno nastąpić automatycznie, jeśli urządzenie było już zarejestrowane w systemie.</p>
     <div class="important">
-        <strong>Ważne:</strong> Jeśli anulujesz subskrypcję i usuniesz
+        <strong>Ważne:</strong> Jeśli w trakcie okresu karencji zainstalujesz aplikację na zupełnie nowym urządzeniu, które nigdy nie miało kAIboard z Twoim kontem, pozostałe dni i saldo tokenów mogą nie być możliwe do odzyskania ze względów bezpieczeństwa, ponieważ nowe urządzenie nie jest jeszcze zarejestrowane w systemie. Podobnie, jeśli usuniesz dane w chmurze z aplikacji w trakcie okresu karencji, usunięcie jest natychmiastowe i oznacza definityczną rezygnację z pozostałego okresu i salda tokenów.
     </div>
 </div>
 
 <p class="question">Jak działa kopia zapasowa?</p>
 <p class="answer">kAIboard oferuje dwie opcje kopii zapasowej. Wszyscy użytkownicy mogą utworzyć lokalną kopię zapasową swoich ustawień i danych uczenia się. Subskrybenci mogą również wykonać kopię zapasową na swoim osobistym Google Drive. W obu przypadkach saldo tokenów tłumaczeniowych jest zawsze synchronizowane z chmury — nigdy nie jest zapisywane w pliku kopii zapasowej, aby zapobiec duplikacji.</p>
-
-<h2>Przewidywanie i autokorekta</h2>
-
-<p class="question">Jak dobre są przewidywania kAIboard w porównaniu z innymi klawiaturami?</p>
-<p class="answer">Silnik przewidywania kAIboard jest zbudowany na solidnych fundamentach: statystyczne modele językowe, kompletne słowniki i spersonalizowany system uczenia się, który poprawia się z każdym wpisanym słowem — wszystko działa całkowicie na Twoim urządzeniu bez żadnej zależności od chmury. Trzeba jednak przyznać, że kAIboard jest tworzone przez jednego programistę. Duże firmy technologiczne dysponują zespołami setek inżynierów pracujących nad modelami neuronowymi trenowanymi na miliardach danych. Przewidywania kAIboard są solidne i zauważalnie poprawiają się z użytkowaniem, ale nie będę udawać, że dorównuję tej skali. To, co naprawdę wyróżnia kAIboard, to coś, czego żadna inna klawiatura nie robi: wiedzieć, jakiego języka potrzebujesz, zanim wpiszesz choćby jeden znak.</p>
-
-<p class="question">Dlaczego autokorekta nie zastępuje słów automatycznie?</p>
-<p class="answer">To celowe działanie. Autokorekta kAIboard jest celowo zachowawcza — sugeruje poprawki na pasku sugestii, zamiast wymuszać zamianę słów. Nie ma nic bardziej frustrującego niż klawiatura, która nadpisuje to, co naprawdę chciałeś napisać. Ty zachowujesz kontrolę.</p>
 
 <h2>Rozwiązywanie problemów</h2>
 
@@ -117,7 +167,10 @@
 <p class="answer">Upewnij się, że zarówno uprawnienie do Kontaktów, jak i usługa Ułatwień dostępu są włączone. Sprawdź, czy kontakt ma numer telefonu z międzynarodowym numerem kierunkowym w Twojej książce adresowej.</p>
 
 <p class="question">Tłumaczenie nie działa.</p>
-<p class="answer">Sprawdź, czy masz aktywną subskrypcję i czy tłumaczenie jest włączone (klawisz Enter powinien wyświetlać ikonę tłumaczenia ⇄). Do tłumaczenia potrzebne jest również połączenie z internetem.</p>
+<p class="answer">Sprawdź, czy masz aktywną subskrypcję z dostępnymi tokenami. Sprawdź, czy ogólny przełącznik tłumaczenia jest włączony w Ustawieniach aplikacji. Upewnij się, że aktywowałeś tłumaczenie dla konkretnego czatu długim naciśnięciem klawisza Enter (ikona powinna pokazywać ⇄). Do tłumaczenia potrzebne jest również połączenie z internetem.</p>
+
+<p class="question">Ikona klawisza Enter nie pokazuje strzałek tłumaczenia.</p>
+<p class="answer">Sprawdź, czy ogólny przełącznik tłumaczenia jest włączony w Ustawieniach aplikacji. Jeśli jest włączony, spróbuj wyjść z czatu i wejść ponownie. Ikona zmienia się tylko w czatach, w których aktywowałeś tłumaczenie długim naciśnięciem Enter.</p>
 
 <div class="contact-box">
     <p class="question">Potrzebujesz pomocy?</p>
@@ -126,7 +179,7 @@
 </div>
 
 <p style="text-align: center; color: #7f8c8d; margin-top: 50px;">
-    <strong>Wersja 1.0 - Ostatnia aktualizacja: 7 marca 2026</strong><br>
+    <strong>Wersja 1.1 - Ostatnia aktualizacja: 14 marca 2026</strong><br>
     © 2026 Alessandro Faedda - kAIboard
 </p>
 

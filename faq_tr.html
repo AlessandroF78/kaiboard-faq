@@ -15,14 +15,15 @@
         .contact-box { background-color: #e8f4f8; padding: 20px; border-radius: 5px; margin: 20px 0; }
         .highlight { background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; }
         .important { background-color: #f8d7da; padding: 15px; border-left: 4px solid #dc3545; margin: 20px 0; }
+        .info { background-color: #d1ecf1; padding: 15px; border-left: 4px solid #17a2b8; margin: 20px 0; }
     </style>
 </head>
 <body>
 
 <h1>Sıkça sorulan sorular - kAIboard</h1>
 
-<p><strong>Son güncelleme:</strong> 7 Mart 2026</p>
-<p><strong>Sürüm:</strong> 1.0</p>
+<p><strong>Son güncelleme:</strong> 14 Mart 2026</p>
+<p><strong>Sürüm:</strong> 1.1</p>
 
 <h2>Başlarken</h2>
 
@@ -39,7 +40,7 @@
         <li>Cihazınızın klavye ayarlarında kAIboard'u giriş yöntemi olarak etkinleştirin</li>
         <li>kAIboard'u varsayılan klavye olarak ayarlayın</li>
         <li>İstendiğinde Kişiler iznini verin</li>
-        <li>İstendiğinde Erişilebilirlik hizmetini etkinleştirin</li>
+        <li>Her iki Erişilebilirlik hizmetini de etkinleştirin: kAIboard iki hizmet kullanır (biri sohbetlerde aktif kişiyi algılamak için, diğeri standart olmayan arayüzlere sahip uygulamaları desteklemek için). Otomatik geçişin doğru çalışması için her ikisinin de etkinleştirilmesi gerekir. Uygulamayı başlattığınızda bir açılır pencere eksik izinleri hatırlatacak ve dokunduğunuzda sizi doğrudan cihaz ayarlarındaki izinler bölümüne yönlendirecektir</li>
         <li>Uygulama ayarlarında Bildirim Erişimi'ni etkinleştirin (bildirimlerden gelen hızlı yanıtlarda otomatik dil değiştirme için gereklidir)</li>
         <li>Uygulama ayarlarında Bildirim Ayarları'nı etkinleştirin (AI Çeviri için token limiti uyarıları gibi kullanım bildirimleri için gereklidir)</li>
         <li>Sohbet etmeye başlayın — dil otomatik olarak değişir!</li>
@@ -47,18 +48,21 @@
 </div>
 
 <p class="question">Ekstra bir şey indirmem gerekiyor mu?</p>
-<p class="answer">Sözlükler ve tahmin modelleri isteğe bağlı olarak indirilir. Bir dili ilk kez kullandığınızda kAIboard gerekli dosyaları indirecektir. İndirmeleri uygulama içindeki Çevrimdışı Modeller ekranından yönetebilirsiniz.</p>
+<div class="answer">
+    <p>Otomatik düzeltme sözlükleri tüm 13 dil için uygulamada zaten mevcuttur — otomatik düzeltmeyi kullanmak için hiçbir şey indirmeniz gerekmez. Ancak sonraki kelime tahmini için, kullanmak istediğiniz her dil için tahmin modelini indirmeniz gerekir. Bir dili ilk kez kullandığınızda, modeli uygulama içindeki Çevrimdışı Modeller ekranından indirebilirsiniz: istediğiniz dilin yanındaki mavi «İndir» düğmesine dokunun. İndirildikten sonra düğme kırmızı «Kaldır» olarak değişir; artık kullanmadığınız dilleri kaldırarak yer açmak isterseniz kullanabilirsiniz. En sık kullandığınız diller anında geçiş sağlamak için belleğe önceden yüklenir.</p>
+    <p>Belirli bir dil için tahminlerin çalışmadığını fark ederseniz, Çevrimdışı Modeller ekranında o dil için tahmin modelinin indirildiğini kontrol edin.</p>
+</div>
 
 <h2>Özellikler</h2>
 
 <p class="question">Otomatik dil değiştirme nasıl çalışır?</p>
-<p class="answer">Bir sohbet açtığınızda kAIboard kişi adını algılar, rehberinizde telefon numarasını arar ve uluslararası alan kodunu okur. Örneğin +90 Türkçe, +49 Almanca, +33 Fransızca anlamına gelir. Klavye düzeni yaklaşık 65 milisaniyede otomatik olarak değişir. Herhangi bir kişi için dili uygulama içindeki Kişi Yönetimi ekranında manuel olarak ayarlayabilir veya değiştirebilir ya da doğrudan klavyeden boşluk çubuğuna uzun basabilirsiniz.</p>
+<div class="answer">
+    <p>Bir sohbet açtığınızda kAIboard kişi adını algılar, rehberinizde telefon numarasını arar ve uluslararası alan kodunu okur. Örneğin +39 İtalyanca, +49 Almanca, +33 Fransızca anlamına gelir. Klavye düzeni yaklaşık 65 milisaniyede otomatik olarak değişir. Sistem çok düzeyli bir öncelik zinciri kullanır: önce o kişi için o belirli uygulamada manuel olarak bir dil ayarlayıp ayarlamadığınızı kontrol eder, ardından o kişi için genel bir ayarınız olup olmadığını, sonra telefon kodundan otomatik algılamayı ve son olarak cihazın sistem dilini yedek olarak kullanır.</p>
+    <p>Herhangi bir kişi için dili iki şekilde manuel olarak da ayarlayabilir veya değiştirebilirsiniz: uygulama içindeki Kişi Yönetimi ekranından (rehberinizdeki her kişiye atanmış dili görebileceğiniz ve düzenleyebileceğiniz yer) veya bir sohbet sırasında doğrudan klavyeden boşluk çubuğuna uzun basarak (mevcut dillerle bir menü belirir ve seçiminiz o kişi için kaydedilir).</p>
+</div>
 
 <p class="question">Aynı ada sahip iki kişim varsa ne olur?</p>
 <p class="answer">kAIboard, doğru kişiyi seçmenizi isteyen bir diyalog gösterecektir. Seçiminiz mevcut oturum boyunca hatırlanır, bu nedenle klavye hizmeti yeniden başlatılana kadar tekrar sorulmaz.</p>
-
-<p class="question">AI Çeviri nasıl çalışır?</p>
-<p class="answer">Belirli bir sohbet için çeviriyi etkinleştirmek üzere Enter tuşuna uzun basın. Enter tuşunun simgesi, çevirinin aktif olduğunu göstermek için değişir. Mesajınızı normal şekilde yazın, ardından Enter'a basın — metniniz kişinizin diline çevrilir ve yazdığınızın yerini alır. Devre dışı bırakmak için tekrar Enter'a uzun basın. Çeviri, aktif bir abonelik gerektirir.</p>
 
 <p class="question">kAIboard grup sohbetlerinde çalışır mı?</p>
 <p class="answer">Evet. Algılanacak bireysel bir kişinin olmadığı grup sohbetlerinde manuel olarak bir dil atayabilirsiniz. kAIboard, gizlilik açısından güvenli bir hash kullanarak seçiminizi hatırlar — grup adı asla saklanmaz.</p>
@@ -66,20 +70,72 @@
 <p class="question">Hangi mesajlaşma uygulamaları destekleniyor?</p>
 <p class="answer">WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack ve daha birçoğu dahil olmak üzere 120'den fazla uygulama — tanışma, ulaşım, yemek teslimatı ve pazar yeri uygulamaları da dahil. Bildirimlerden gelen hızlı yanıtlarla da çalışır.</p>
 
+<div class="info">
+    <p class="question">Telegram hakkında not</p>
+    <p>Telegram, kişi adlarını, takma adları ve sayısal kimlikleri dahili olarak diğer mesajlaşma uygulamalarından farklı yönetir. Telegram'ın bu özel davranışı nedeniyle, rehberinizdeki telefon numarasından otomatik olarak algılanan bir kişiyle sohbete girerken veya tekrar girerken zaman zaman sistem dilinin kısa bir yanıp sönmesini fark edebilirsiniz. Yanıp sönme hızla düzelir ve sistem kısa süre sonra doğru dili ayarlar. Manuel olarak dil atadığınız kişiler için (Kişi Yönetimi ekranı veya boşluk çubuğuna uzun basma yoluyla), dil değiştirme Telegram'da bile sorunsuz ve gecikmesiz çalışmalıdır. Bu davranış, Telegram'ın kişi bilgilerini sisteme iletme biçiminden kaynaklanır ve kAIboard'un bir sorunu değildir. Diğer mesajlaşma uygulamalarında (WhatsApp, Signal, Messenger ve diğerleri), dil değiştirme hem otomatik hem de manuel kişiler için sorunsuz çalışmalıdır.</p>
+</div>
+
+<h2>AI Çeviri</h2>
+
+<p class="question">AI Çeviri nasıl çalışır?</p>
+<div class="answer">
+    <p>kAIboard'un AI çevirisi iki kontrol düzeyiyle çalışır:</p>
+    <p><strong>1. Genel anahtar (Uygulama Ayarlarında):</strong> Bu ana anahtardır. Kapatıldığında hiçbir sohbet çeviri yapamaz ve bireysel sohbetler için tüm çeviri ayarları sıfırlanır. Tekrar açtığınızda, her sohbet için çeviriyi Enter'a yeni bir uzun basışla yeniden etkinleştirmeniz gerekecektir. Bu kasıtlıdır: unutulan sohbetlerde çevirinin yeniden etkinleşmesini ve farkında olmadan token tüketmesini önler.</p>
+    <p><strong>2. Sohbet bazında etkinleştirme (Enter tuşuna uzun basma):</strong> Genel anahtar açıkken, o belirli sohbet için çeviriyi etkinleştirmek üzere Enter tuşuna uzun basın. Tuşun simgesi «↩» (normal Enter) yerine «⇄» (çeviri aktif) olarak değişir. İkinci bir uzun basma o sohbet için çeviriyi devre dışı bırakır. Tercih her kişi için kaydedilir: aynı sohbeti bir sonraki açışınızda çeviri bıraktığınız gibi hâlâ aktif (veya deaktif) olacaktır.</p>
+    <p><strong>Nasıl çevrilir:</strong> Çeviri etkinleştirildikten sonra mesajınızı kendi dilinizde normal şekilde yazın. kAIboard klavyesinde Enter tuşuna bastığınızda, metin göndermeden önce otomatik olarak kişinizin diline çevrilir. Ardından çevrilmiş mesajı göndermek için mesajlaşma uygulamasının gönder düğmesini (metin çubuğunun yanında) kullanın. Çeviri yalnızca klavyenin Enter tuşuna basıldığında gerçekleşir — noktalama işaretleri dahil kesintisiz olarak özgürce yazabilirsiniz.</p>
+    <p>Çeviri aktif bir abonelik ve internet bağlantısı gerektirir. Yalnızca giden metin (yazdığınız) çevrilir — kAIboard gelen mesajları hiçbir şekilde okumaz, engellemez veya işlemez. Bu seçim, maksimum gizliliği sağlamak için kasıtlı olarak yapılmıştır: klavyenin alınan konuşmaların içeriğine erişimi yoktur.</p>
+</div>
+
+<p class="question">Latin dışı dillerdeki kişilerle (Rusça, Ukraynaca, Yunanca, Gürcüce) ne olur?</p>
+<div class="answer">
+    <p>Dili Latin olmayan bir alfabe kullanan bir kişi için çeviri aktif olduğunda (Rusça, Ukraynaca, Yunanca, Gürcüce), klavye rahatça yazabilmeniz için otomatik olarak cihazınızın sistem dili düzenine (örn. Türkçe) geçmelidir. Kendi dilinizde yazarsınız ve çeviri, Enter'a bastığınızda metni kişinin alfabesine ve diline dönüştürmeyi üstlenir.</p>
+    <p>Aynı kişi için çeviri devre dışı bırakıldığında (ikinci bir uzun Enter basışıyla), düzen otomatik olarak kişinin yerel alfabesine (Kiril, Yunan veya Gürcü) geri dönmelidir.</p>
+    <div class="info">
+        <strong>Not:</strong> Bu özellik uygulamada mevcuttur ancak henüz kapsamlı olarak test edilmemiştir. Bazı durumlarda otomatik düzen değiştirme beklendiği gibi çalışmayabilir. Sorunlarla karşılaşırsanız lütfen support@kaiboard.eu adresinden bizimle iletişime geçin.
+    </div>
+</div>
+
+<p class="question">Çeviri güvenli mi? Mesajlarım kaydediliyor mu?</p>
+<div class="answer">
+    <p>Metin, HTTPS şifreli bağlantı üzerinden güvenli bir şekilde Cloudflare aktarıcısına iletilir ve oradan çeviri için OpenAI API'sine yönlendirilir. Metin hiçbir zaman herhangi bir sunucuda saklanmaz — transit geçer ve anında geri döndürülür. OpenAI API anahtarı cihazınızda asla açığa çıkmaz.</p>
+    <div class="highlight">
+        <strong>OpenAI hakkında şeffaflık:</strong> kAIboard, çeviri için dış sağlayıcı olarak OpenAI'ı kullanır. OpenAI, API aracılığıyla gönderilen verilerin modellerini eğitmek için kullanılmadığını kamuoyuna açıklamaktadır. AB dışına veri aktarımları için Standart Sözleşme Maddeleri yürürlüktedir. Ancak şu anda OpenAI ile resmi bir Veri İşleme Sözleşmemiz (DPA) bulunmamaktadır. Son derece hassas bilgileri (sağlık, finansal, hukuki veriler) çevirmekten kaçınmanızı öneriyoruz. Daha fazla bilgi için <a href="https://openai.com/enterprise-privacy" target="_blank">OpenAI API gizlilik politikasına</a> bakınız.
+    </div>
+</div>
+
+<h2>Tahmin ve Otomatik Düzeltme</h2>
+
+<p class="question">kAIboard'un tahminleri diğer klavyelerle karşılaştırıldığında ne kadar iyi?</p>
+<p class="answer">kAIboard'un tahmin motoru sağlam temeller üzerine inşa edilmiştir: istatistiksel dil modelleri, kapsamlı sözlükler ve yazdığınız her kelimeyle gelişen kişiselleştirilmiş bir öğrenme sistemi — tamamı bulut bağımlılığı olmadan tamamen cihazınızda çalışır. Bununla birlikte, kAIboard tek bir geliştirici tarafından üretilmektedir. Büyük teknoloji şirketleri, milyarlarca veri noktası üzerinde eğitilmiş sinir ağı modellerinde çalışan yüzlerce mühendis ekibine sahiptir. kAIboard'un tahminleri sağlamdır ve kullanımla belirgin şekilde iyileşir, ancak bu ölçeğe ulaştığımı iddia etmeyeceğim. kAIboard'u gerçekten farklı kılan, başka hiçbir klavyenin yapmadığı bir şeydir: tek bir karakter yazmadan önce hangi dile ihtiyacınız olduğunu bilmek.</p>
+
+<p class="question">Otomatik düzeltme nasıl çalışır?</p>
+<div class="answer">
+    <p>kAIboard'un otomatik düzeltmesi, yazılan kelime ile sözlük adayları arasındaki düzenleme mesafesini, cümle bağlamını (önceki kelimeler), kelimelerin gerçek kullanım sıklığını, klavyedeki tuş yakınlığını ve kişisel yazma alışkanlıklarınızı analiz eden çok faktörlü bir sistem kullanır. Sistem, transpozisyonların (yer değiştirmiş harfler), eksik çift harflerin, yanlışlıkla basılan komşu tuşların ve eksik vurgu işaretlerinin düzeltilmesini destekler — desteklenen 13 dilin tümünde.</p>
+    <p>Otomatik düzeltme kasıtlı olarak ölçülüdür: düzeltmeleri öneri çubuğunda gösterir ve yalnızca sistem yeterince emin olduğunda otomatik olarak uygular. Gerçekten yazmak istediğinizi üzerine yazan bir klavyeden daha sinir bozucu bir şey yoktur. Kontrol sizde kalır.</p>
+</div>
+
+<p class="question">kAIboard yazma alışkanlıklarımdan öğrenir mi?</p>
+<p class="answer">Evet. Öğrenme sistemi en sık kullandığınız kelimeleri, en yaygın kelime kombinasyonlarını ve yazdığınız özel isimleri kaydeder. Öneriler, son alışkanlıkları eskilerden daha ilgili tutan akıllı bir azalma sistemiyle zamanla iyileşir. Öğrenme yalnızca öneri çubuğundan bir öneriye dokunduğunuzda gerçekleşir — düzeltme hatalarının alışkanlık olarak öğrenilmesini önlemek için otomatik düzeltmeler kaydedilmez. Tüm öğrenme verileri cihazınızda kalır ve istediğiniz zaman silinebilir.</p>
+
 <h2>Gizlilik ve Veriler</h2>
 
 <p class="question">kAIboard hangi verileri toplar?</p>
 <p class="answer">kAIboard, local-first yaklaşımını benimser. Kişi algılama, otomatik düzeltme, tahminler ve dil tercihleri tamamen cihazınızda gerçekleşir. Dışarıya gönderilen tek veri, çevirmeyi seçtiğiniz metindir (güvenli HTTPS bağlantısı üzerinden) ve hiçbir zaman herhangi bir sunucuda saklanmaz. Analiz yok, izleme yok, reklam kimliği yok.</p>
 
 <p class="question">kAIboard KVKK/GDPR uyumlu mu?</p>
-<p class="answer">Evet. kAIboard, Gizlilik bölümünde dört seçenek sunar: verilerinizi JSON formatında dışa aktarma, yalnızca öğrenme verilerini silme, tüm yerel verileri silme veya tüm bulut verilerini silme. Bulut verileri (abonelik bilgileri) 90–365 gün sonra otomatik olarak silinir. Kilitlenme raporları isteğe bağlıdır ve açık onay gerektirir.</p>
+<div class="answer">
+    <p>Evet. kAIboard, Gizlilik bölümünde dört seçenek sunar: verilerinizi JSON formatında dışa aktarma, yalnızca öğrenme verilerini silme, tüm yerel verileri silme veya tüm bulut verilerini silme. Bulut verileri (abonelik bilgileri) 90–365 gün etkisizlik sonrasında otomatik olarak silinir.</p>
+    <p>Kilitlenme raporları (crash reports) tamamen isteğe bağlıdır: Ayarlar'da istediğiniz zaman etkinleştirebilir veya devre dışı bırakabilirsiniz. İlk etkinleştirmede bir onay diyalogu gösterilir. Kilitlenme raporları yalnızca hatalar hakkında teknik bilgiler ve cihaz meta verileri içerir — asla yazılan metin, kişi adları veya diğer kişisel veriler içermez.</p>
+</div>
+
+<p class="question">Uygulamada görünen yönetici günlükleri nedir?</p>
+<div class="answer">
+    <p>Maksimum şeffaflığı sağlamak için kAIboard, sunucu tarafından hesabınızda her değişiklik yapıldığında otomatik olarak bir günlük kaydeder — örneğin bir anlaşmazlık veya teknik sorun nedeniyle token iadesi durumunda. Bu günlükler uygulamanın ilgili bölümünde görüntülenebilir, böylece hesabınızda herhangi bir işlem yapılıp yapılmadığını ve ne zaman yapıldığını istediğiniz zaman kontrol edebilirsiniz. Günlük yoksa, sunucu tarafından hiçbir zaman bir değişiklik yapılmadığı anlamına gelir. Yönetici günlükleri veri saklama politikasına göre otomatik olarak silinir veya Gizlilik bölümündeki «Bulut verilerini sil» düğmesiyle manuel olarak silebilirsiniz.</p>
+</div>
 
 <p class="question">Tüm verilerimi silebilir miyim?</p>
 <div class="answer">
     <p>Evet. Ayarlar → Gizlilik'e gidin ve mevcut düğmeleri kullanın. Verilerinizi JSON formatında dışa aktarabilir, öğrenme verilerini, tüm yerel verileri veya bulut verilerini ayrı ayrı silebilirsiniz. Uygulamayı kaldırmak tüm yerel verileri otomatik olarak siler.</p>
-    <div class="important">
-        <strong>Not:</strong> Aboneliğinizi iptal eder ve kalan ödenmiş dönem (ek süre) sırasında bulut verilerini silerseniz, silme işlemi anında gerçekleşir ve kalan dönemi ile mevcut token bakiyenizi kalıcı olarak kaybedersiniz. Benzer şekilde, bu ek süre boyunca uygulamayı kaldırır veya fabrika ayarlarına sıfırlama yaparsanız, kalan günler ve token bakiyesi kalıcı olarak kaybolur çünkü Google Play gönüllü olarak iptal edilen abonelikleri yeni bir yüklemede geri yüklemez.
-    </div>
 </div>
 
 <h2>Fiyatlandırma ve Abonelik</h2>
@@ -95,21 +151,15 @@
 
 <p class="question">Aboneliğimi iptal edip uygulamayı yeniden yüklersem ne olur?</p>
 <div class="answer">
+    <p><strong>Aktif abonelikle (iptal edilmemiş):</strong> Uygulamayı kaldırıp yeniden yüklerseniz veya aynı Google hesabıyla yeni bir cihaza ya da birden fazla cihaza yüklerseniz, abonelik ve token bakiyesi Google Play ve Firebase aracılığıyla otomatik olarak senkronize edilir. Hiçbir şey yapmanız gerekmez — geri yükleme ilk başlatmada otomatik olarak gerçekleşir.</p>
+    <p><strong>İptal edilmiş abonelikle (ek süre):</strong> Uygulamayı aynı cihaza yeniden yüklerseniz, sistem aboneliği ve token bakiyesini Firebase aracılığıyla bulur ve ek süre boyunca bile otomatik olarak geri yükler. Aynı hesapla uygulamanın zaten yüklü olduğu diğer cihazlarda, cihaz sistemde zaten kayıtlıysa geri yükleme otomatik olarak gerçekleşmelidir.</p>
     <div class="important">
-        <strong>Önemli:</strong> Aboneliğinizi iptal edip ardından kalan ödenmiş süre (ek süre) boyunca uygulamayı kaldırır veya fabrika ayarlarına sıfırlama yaparsanız, kalan günler ve mevcut token bakiyeniz kurtarılamaz. Bunun nedeni, Google Play'in gönüllü olarak iptal edilen abonelikleri yeni bir yüklemede geri yüklememesidir. Kaldırmadan önce kalan tokenlerinizi kullandığınızdan emin olun. Aboneliğinizi iptal etmeden yeniden yüklerseniz, geri yükleme Google Play üzerinden normal şekilde gerçekleşir.
+        <strong>Önemli:</strong> Ek süre boyunca uygulamayı hesabınızla daha önce hiç kAIboard yüklenmemiş tamamen yeni bir cihaza yüklerseniz, güvenlik nedeniyle kalan günler ve token bakiyesi kurtarılamayabilir, çünkü yeni cihaz henüz sistemde kayıtlı değildir. Aynı şekilde, ek süre boyunca uygulamadan bulut verilerini silerseniz, silme anında gerçekleşir ve kalan süre ile token bakiyesinden kalıcı olarak vazgeçmiş olursunuz.
     </div>
 </div>
 
 <p class="question">Yedekleme nasıl çalışır?</p>
 <p class="answer">kAIboard iki yedekleme seçeneği sunar. Tüm kullanıcılar ayarlarının ve öğrenme verilerinin yerel bir yedeğini oluşturabilir. Aboneler ayrıca kişisel Google Drive'larına yedekleme yapabilir. Her iki durumda da çeviri token bakiyeniz her zaman buluttan senkronize edilir — çoğaltmayı önlemek için yedek dosyasında asla saklanmaz.</p>
-
-<h2>Tahmin ve Otomatik Düzeltme</h2>
-
-<p class="question">kAIboard'un tahminleri diğer klavyelerle karşılaştırıldığında ne kadar iyi?</p>
-<p class="answer">kAIboard'un tahmin motoru sağlam temeller üzerine inşa edilmiştir: istatistiksel dil modelleri, kapsamlı sözlükler ve yazdığınız her kelimeyle gelişen kişiselleştirilmiş bir öğrenme sistemi — tamamı bulut bağımlılığı olmadan tamamen cihazınızda çalışır. Bununla birlikte, kAIboard tek bir geliştirici tarafından üretilmektedir. Büyük teknoloji şirketleri, milyarlarca veri noktası üzerinde eğitilmiş sinir ağı modellerinde çalışan yüzlerce mühendis ekibine sahiptir. kAIboard'un tahminleri sağlamdır ve kullanımla belirgin şekilde iyileşir, ancak bu ölçeğe ulaştığımı iddia etmeyeceğim. kAIboard'u gerçekten farklı kılan, başka hiçbir klavyenin yapmadığı bir şeydir: tek bir karakter yazmadan önce hangi dile ihtiyacınız olduğunu bilmek.</p>
-
-<p class="question">Otomatik düzeltme neden kelimeleri otomatik olarak değiştirmiyor?</p>
-<p class="answer">Bu bilinçli bir tasarım tercihidir. kAIboard'un otomatik düzeltmesi kasıtlı olarak ölçülüdür — kelimeleri zorla değiştirmek yerine öneri çubuğunda düzeltmeler önerir. Gerçekten yazmak istediğinizi üzerine yazan bir klavyeden daha sinir bozucu bir şey yoktur. Kontrol sizde kalır.</p>
 
 <h2>Sorun Giderme</h2>
 
@@ -117,7 +167,10 @@
 <p class="answer">Hem Kişiler izninin hem de Erişilebilirlik hizmetinin etkin olduğundan emin olun. Kişinin rehberinizde uluslararası alan kodlu bir telefon numarası olduğunu kontrol edin.</p>
 
 <p class="question">Çeviri çalışmıyor.</p>
-<p class="answer">Aktif bir aboneliğiniz olduğunu ve çevirinin etkin olduğunu doğrulayın (Enter tuşu çeviri simgesini ⇄ göstermelidir). Çeviri için ayrıca internet bağlantısı gereklidir.</p>
+<p class="answer">Kullanılabilir tokenlerle aktif bir aboneliğiniz olduğunu doğrulayın. Uygulama Ayarlarında genel çeviri anahtarının etkin olduğunu kontrol edin. Enter tuşuna uzun basarak belirli sohbet için çeviriyi etkinleştirdiğinizden emin olun (simge ⇄ göstermelidir). Çeviri için ayrıca internet bağlantısı gereklidir.</p>
+
+<p class="question">Enter tuşunun simgesi çeviri oklarını göstermiyor.</p>
+<p class="answer">Uygulama Ayarlarında genel çeviri anahtarının etkin olduğunu kontrol edin. Etkinse sohbetten çıkıp tekrar girmeyi deneyin. Simge yalnızca Enter'a uzun basarak çeviriyi etkinleştirdiğiniz sohbetlerde değişir.</p>
 
 <div class="contact-box">
     <p class="question">Yardıma mı ihtiyacınız var?</p>
@@ -126,7 +179,7 @@
 </div>
 
 <p style="text-align: center; color: #7f8c8d; margin-top: 50px;">
-    <strong>Sürüm 1.0 - Son güncelleme: 7 Mart 2026</strong><br>
+    <strong>Sürüm 1.1 - Son güncelleme: 14 Mart 2026</strong><br>
     © 2026 Alessandro Faedda - kAIboard
 </p>
 

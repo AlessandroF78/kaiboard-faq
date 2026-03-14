@@ -57,19 +57,25 @@
             border-left: 4px solid #dc3545;
             margin: 20px 0;
         }
+        .info {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
 
 <h1>Frequently Asked Questions - kAIboard</h1>
 
-<p><strong>Last updated:</strong> March 7, 2026</p>
-<p><strong>Version:</strong> 1.0</p>
+<p><strong>Last updated:</strong> March 14, 2026</p>
+<p><strong>Version:</strong> 1.1</p>
 
 <h2>Getting Started</h2>
 
 <p class="question">Why does kAIboard need the Contacts permission?</p>
-<p class="answer">kAIboard reads your contacts to match the person you're chatting with to their phone number. From the phone number prefix (e.g. +49 for Germany), it determines which language to switch to. Contact names and phone numbers are never stored permanently — they're only used in the moment to detect the language.</p>
+<p class="answer">kAIboard reads your contacts to match the person you're chatting with to their phone number. From the international prefix (e.g. +49 for Germany), it determines which language to switch to. Contact names and phone numbers are never stored permanently — they're only used in the moment to detect the language.</p>
 
 <p class="question">Why does kAIboard need the Accessibility permission?</p>
 <p class="answer">This permission allows kAIboard to detect which contact you're currently chatting with inside messaging apps like WhatsApp, Telegram, or Signal. Without it, automatic language switching cannot work. kAIboard only reads the conversation title (the contact name) — it never reads your messages.</p>
@@ -81,7 +87,7 @@
         <li>Enable kAIboard as an input method in your device's keyboard settings</li>
         <li>Set kAIboard as your default keyboard</li>
         <li>Grant Contacts permission when prompted</li>
-        <li>Enable the Accessibility service when prompted</li>
+        <li>Enable both Accessibility services: kAIboard uses two (one to detect the active contact in chats, another to support apps with non-standard interfaces). Both must be enabled for automatic switching to work correctly. On app launch, a popup will remind you which permissions are missing and, by tapping it, will take you directly to the permissions section in your device settings</li>
         <li>In the app settings, enable Notification Access (needed for automatic language switching in quick replies from notifications)</li>
         <li>In the app settings, enable Notification Settings (needed for usage alerts, such as token limit warnings for AI Translation)</li>
         <li>Start chatting — the language switches automatically!</li>
@@ -89,18 +95,21 @@
 </div>
 
 <p class="question">Do I need to download anything extra?</p>
-<p class="answer">Dictionaries and prediction models are downloaded on-demand. When you first use a language, kAIboard will download the necessary files. You can manage downloads from the Offline Models screen inside the app.</p>
+<div class="answer">
+    <p>Dictionaries for autocorrect are already included in the app for all 13 languages — you don't need to download anything to use autocorrect. For next-word prediction, however, you need to download the prediction model for each language you want to use. When you use a language for the first time, you can download the model from the Offline Models screen inside the app: tap the blue "Download" button next to the desired language. Once downloaded, the button turns red "Remove" in case you want to free up space by removing languages you no longer use. Your most frequently used languages are preloaded in memory to ensure instant switching.</p>
+    <p>If you notice that predictions aren't working for a specific language, check in the Offline Models screen that the prediction model has been downloaded for that language.</p>
+</div>
 
 <h2>Features</h2>
 
 <p class="question">How does automatic language switching work?</p>
-<p class="answer">When you open a chat, kAIboard detects the contact name, looks up their phone number in your contacts, and reads the international prefix. For example, +39 means Italian, +49 means German, +33 means French. The keyboard layout switches automatically in about 65 milliseconds. You can also set or change the language for any contact manually in the Contact Management screen inside the app, or by long-pressing the spacebar directly from the keyboard.</p>
+<div class="answer">
+    <p>When you open a chat, kAIboard detects the contact name, looks up their phone number in your contacts, and reads the international prefix. For example, +39 means Italian, +49 means German, +33 means French. The keyboard layout switches automatically in about 65 milliseconds. The system uses a multi-level priority chain: first it checks if you've manually set a language for that contact in that specific app, then if you have a global setting for that contact, then automatic detection from the phone prefix, and finally the device's system language as a fallback.</p>
+    <p>You can also set or change the language for any contact manually in two ways: from the Contact Management screen inside the app (where you can see and edit the language associated with each contact in your address book), or by long-pressing the spacebar directly from the keyboard while in a chat (a menu appears with available languages and your choice is saved for that contact).</p>
+</div>
 
 <p class="question">What if I have two contacts with the same name?</p>
-<p class="answer">kAIboard will show a dialog asking you to choose the correct contact. Your choice is remembered for the current session so you won't be asked again until you restart the keyboard service.</p>
-
-<p class="question">How does AI Translation work?</p>
-<p class="answer">Long-press the Enter key to activate translation for a specific chat. The Enter icon changes to show translation is active. Type your message normally, then press Enter — your text is translated into your contact's language and replaces what you typed. Long-press Enter again to deactivate. Translation requires an active subscription.</p>
+<p class="answer">kAIboard will show a dialog asking you to choose the correct contact. Your choice is remembered for the current session, so you won't be asked again until you restart the keyboard service.</p>
 
 <p class="question">Does kAIboard work with group chats?</p>
 <p class="answer">Yes. For group chats where there's no individual contact to detect, you can manually assign a language. kAIboard remembers your choice using a privacy-safe hash — the group name is never stored.</p>
@@ -108,20 +117,72 @@
 <p class="question">Which messaging apps are supported?</p>
 <p class="answer">Over 120 apps, including WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack, and many more — including dating apps, ride-hailing, food delivery, and marketplace apps. It also works with quick replies from notifications.</p>
 
+<div class="info">
+    <p class="question">Note about Telegram</p>
+    <p>Telegram internally manages contact names, nicknames, and numeric IDs differently from other messaging apps. Due to this Telegram-specific behavior, you may occasionally notice a brief flash of the system language when entering or re-entering a chat with a contact detected automatically from the phone number in your address book. The flash resolves quickly and the system sets the correct language shortly after. For contacts you've manually assigned a language to (via the Contact Management screen or the long-press on the spacebar), the language switch should work smoothly and without delay, even on Telegram. This behavior is caused by the way Telegram communicates contact information to the system and is not a kAIboard issue. In other messaging apps (WhatsApp, Signal, Messenger, and others), the language switch should work smoothly for both automatic and manual contacts.</p>
+</div>
+
+<h2>AI Translation</h2>
+
+<p class="question">How does AI Translation work?</p>
+<div class="answer">
+    <p>kAIboard's AI translation works with two levels of control:</p>
+    <p><strong>1. Global toggle (in App Settings):</strong> This is the master switch. When it's off, no chat can translate and all translation settings for individual chats are reset. When you turn it back on, you'll need to re-enable translation for each chat with a new long-press on Enter. This is intentional: it prevents translation from reactivating on forgotten chats, consuming tokens without you noticing.</p>
+    <p><strong>2. Per-chat activation (long-press the Enter key):</strong> With the global toggle on, long-press the Enter key to activate translation for that specific conversation. The key icon changes from "↩" (normal Enter) to "⇄" (translation active). A second long-press deactivates translation for that chat. The preference is saved per contact: the next time you open the same chat, translation will still be active (or inactive) as you left it.</p>
+    <p><strong>How to translate:</strong> Once translation is activated, type your message normally in your language. When you press the Enter key on the kAIboard keyboard, the text is automatically translated into your contact's language before sending. Then use the messaging app's send button (next to the text bar) to send the translated message. Translation only happens when pressing the keyboard's Enter key — you can type freely, including punctuation, without interruptions.</p>
+    <p>Translation requires an active subscription and an internet connection. Only outgoing text (what you type) is translated — kAIboard does not read, intercept, or process incoming messages in any way. This is an intentional choice to ensure maximum privacy: the keyboard has no access to the content of received conversations.</p>
+</div>
+
+<p class="question">What happens with contacts in non-Latin languages (Russian, Ukrainian, Greek, Georgian)?</p>
+<div class="answer">
+    <p>When translation is active for a contact whose language uses a non-Latin alphabet (Russian, Ukrainian, Greek, Georgian), the keyboard should automatically switch to the layout in your device's system language (e.g. English) so you can type comfortably. You type in your language and the translation handles converting the text into the contact's alphabet and language when you press Enter.</p>
+    <p>When translation is deactivated for the same contact (with a second long-press on Enter), the layout should automatically return to the contact's native alphabet (Cyrillic, Greek, or Georgian).</p>
+    <div class="info">
+        <strong>Note:</strong> This feature is present in the app but has not yet been extensively tested. In some cases, the automatic layout switch may not work as expected. If you encounter issues, please contact us at support@kaiboard.eu.
+    </div>
+</div>
+
+<p class="question">Is translation secure? Are my messages saved?</p>
+<div class="answer">
+    <p>The text is transmitted securely via an HTTPS-encrypted connection to a Cloudflare relay, which forwards it to the OpenAI API for translation. The text is never saved on any server — it passes through and is returned immediately. The OpenAI API key is never exposed on your device.</p>
+    <div class="highlight">
+        <strong>Transparency about OpenAI:</strong> kAIboard uses OpenAI as an external provider for translation. OpenAI publicly states that data sent via API is not used to train their models. Standard Contractual Clauses for extra-EU data transfers are in place. However, we currently do not have a formal Data Processing Agreement (DPA) with OpenAI. We recommend avoiding translating highly sensitive information (health, financial, legal data). For more details, see the <a href="https://openai.com/enterprise-privacy" target="_blank">OpenAI API privacy policy</a>.
+    </div>
+</div>
+
+<h2>Predictions &amp; Autocorrect</h2>
+
+<p class="question">How good are kAIboard's predictions compared to other keyboards?</p>
+<p class="answer">kAIboard's prediction engine is built on solid foundations: statistical language models, comprehensive dictionaries, and a personalized learning system that improves with every word you type — all running entirely on your device with zero cloud dependency. That said, kAIboard is built by a solo developer. Major tech companies have dedicated teams of hundreds of engineers working on neural models trained on billions of data points. kAIboard's predictions are solid and get noticeably better as you use them, but I won't pretend to match that scale. What truly sets kAIboard apart is something no other keyboard does: knowing which language you need before you type a single character.</p>
+
+<p class="question">How does autocorrect work?</p>
+<div class="answer">
+    <p>kAIboard's autocorrect uses a multi-factor system that analyzes the editing distance between the typed word and dictionary candidates, sentence context (previous words), real-world word frequency, key proximity on the keyboard, and your personal typing habits. The system supports correction of transpositions (swapped letters), missing doubles, accidentally pressed adjacent keys, and missing accent characters — across all 13 supported languages.</p>
+    <p>Autocorrect is intentionally conservative: it shows corrections in the suggestion strip and only auto-applies them when the system is sufficiently confident. Nothing is more frustrating than a keyboard that overwrites what you actually meant to type. You stay in control.</p>
+</div>
+
+<p class="question">Does kAIboard learn from my typing habits?</p>
+<p class="answer">Yes. The learning system records the words you use most frequently, the most common word combinations, and the proper nouns you type. Suggestions improve over time with an intelligent decay system that keeps recent habits more relevant than old ones. Learning only occurs when you tap a suggestion from the strip — automatic corrections are not recorded to prevent correction errors from being learned as habits. All learning data stays on your device and can be deleted at any time.</p>
+
 <h2>Privacy &amp; Data</h2>
 
 <p class="question">What data does kAIboard collect?</p>
 <p class="answer">kAIboard follows a local-first approach. Contact detection, autocorrect, predictions, and language preferences all happen on your device. The only data sent externally is the text you choose to translate (via secure HTTPS connection), and it's never saved on any server. No analytics, no tracking, no advertising IDs.</p>
 
 <p class="question">Is kAIboard GDPR compliant?</p>
-<p class="answer">Yes. kAIboard offers four options in the Privacy section: export your data as JSON, delete learning data only, delete all local data, or delete all cloud data. Cloud data (subscription info) is automatically cleaned up after 90–365 days. Crash reports are opt-in only.</p>
+<div class="answer">
+    <p>Yes. kAIboard offers four options in the Privacy section: export your data as JSON, delete learning data only, delete all local data, or delete all cloud data. Cloud data (subscription information) is automatically cleaned up after 90–365 days of inactivity.</p>
+    <p>Crash reports are completely optional: you can enable or disable them at any time in Settings. When you enable them for the first time, a confirmation dialog is shown. Crash reports contain only technical error information and device metadata — they never contain typed text, contact names, or other personal data.</p>
+</div>
+
+<p class="question">What are the administrator logs visible in the app?</p>
+<div class="answer">
+    <p>To ensure maximum transparency, kAIboard automatically records a log every time a change is made to your account from the server side — for example, in case of a token reimbursement due to a dispute or a technical issue. These logs are visible in the dedicated section within the app, so you can check at any time if and when an operation was performed on your account. If no logs are present, it means no server-side changes have ever been made. Administrator logs are automatically deleted according to the data retention policy, or you can delete them manually with the "Delete cloud data" button in the Privacy section.</p>
+</div>
 
 <p class="question">Can I delete all my data?</p>
 <div class="answer">
-    <p>Yes. Go to Settings → Privacy and use the available buttons. You can export your data as JSON, delete learning data, delete all local data, or delete cloud data separately. Uninstalling the app removes all local data automatically.</p>
-    <div class="important">
-        <strong>Note:</strong> If you cancel your subscription and delete cloud data during the remaining paid period (grace period), the deletion is immediate and you permanently give up the remaining period and current token balance. Similarly, if you uninstall the app or perform a factory reset during this grace period, the remaining days and token balance are lost permanently because Google Play does not restore voluntarily cancelled subscriptions on a new installation.
-    </div>
+    <p>Yes. Go to Settings → Privacy and use the available buttons. You can export your data as JSON, delete learning data, delete all local data, or delete cloud data separately. Uninstalling the app automatically removes all local data.</p>
 </div>
 
 <h2>Pricing &amp; Subscription</h2>
@@ -137,29 +198,26 @@
 
 <p class="question">What happens if I cancel my subscription and reinstall the app?</p>
 <div class="answer">
+    <p><strong>With an active subscription (not cancelled):</strong> If you uninstall and reinstall the app, or install it on a new device or on multiple devices with the same Google account, the subscription and token balance sync automatically via Google Play and Firebase. You don't need to do anything — the restore happens automatically on first launch.</p>
+    <p><strong>With a cancelled subscription (grace period):</strong> If you reinstall the app on the same device, the system finds the subscription and token balance via Firebase and restores them automatically, even during the grace period. On other devices that already had the app installed with the same account, the restore should happen automatically if the device was already registered in the system.</p>
     <div class="important">
-        <strong>Important:</strong> If you cancel your subscription and later uninstall the app or perform a factory reset during the remaining paid period (grace period), your remaining days and current token balance cannot be recovered. This happens because Google Play does not restore voluntarily cancelled subscriptions on a new installation. Make sure to use your remaining tokens before uninstalling. If you reinstall without having cancelled your subscription, the restore happens normally through Google Play.
+        <strong>Important:</strong> If during the grace period you install the app on a completely new device that has never had kAIboard with your account, the remaining days and token balance may not be recoverable for security reasons, as the new device is not yet registered in the system. Likewise, if you delete cloud data from the app during the grace period, the deletion is immediate and means permanently giving up the remaining period and token balance.
     </div>
 </div>
 
 <p class="question">How does backup work?</p>
 <p class="answer">kAIboard offers two backup options. All users can create a local backup of their settings and learning data. Subscribers can also back up to their personal Google Drive. In both cases, your translation token balance is always synced from the cloud — it's never stored in the backup file itself, to prevent duplication.</p>
 
-<h2>Predictions &amp; Autocorrect</h2>
-
-<p class="question">How good are kAIboard's predictions compared to other keyboards?</p>
-<p class="answer">kAIboard's prediction engine is built on solid foundations: statistical language models, comprehensive dictionaries, and a personalized learning system that improves with every word you type — all running entirely on your device with zero cloud dependency. That said, kAIboard is built by a solo developer. Major tech companies have dedicated teams of hundreds of engineers working on neural models trained on billions of data points. kAIboard's predictions are solid and get noticeably better as you use them, but I won't pretend to match that scale. What truly sets kAIboard apart is something no other keyboard does: knowing which language you need before you type a single character.</p>
-
-<p class="question">Why doesn't autocorrect replace words automatically?</p>
-<p class="answer">By design. kAIboard's autocorrect is intentionally conservative — it suggests corrections in the suggestion strip rather than force-replacing words. Nothing is more frustrating than a keyboard that overwrites what you actually meant to type. You stay in control.</p>
-
 <h2>Troubleshooting</h2>
 
 <p class="question">The keyboard doesn't switch language automatically.</p>
-<p class="answer">Make sure both the Contacts permission and Accessibility service are enabled. Check that the contact has a phone number with an international prefix in your address book.</p>
+<p class="answer">Make sure both the Contacts permission and the Accessibility service are enabled. Check that the contact has a phone number with an international prefix in your address book.</p>
 
 <p class="question">Translation isn't working.</p>
-<p class="answer">Verify that you have an active subscription and that the translation toggle is active (the Enter key should show the translation icon ⇄). You also need an internet connection for translation.</p>
+<p class="answer">Verify that you have an active subscription with available tokens. Check that the global translation toggle is enabled in the app Settings. Make sure you've activated translation for the specific chat with a long-press on the Enter key (the icon should show ⇄). You also need an internet connection for translation.</p>
+
+<p class="question">The Enter key icon doesn't show the translation arrows.</p>
+<p class="answer">Check that the global translation toggle is enabled in the app Settings. If it's enabled, try leaving the chat and re-entering it. The icon only changes in chats where you've activated translation with a long-press on Enter.</p>
 
 <div class="contact-box">
     <p class="question">Need help?</p>
@@ -168,7 +226,7 @@
 </div>
 
 <p style="text-align: center; color: #7f8c8d; margin-top: 50px;">
-    <strong>Version 1.0 - Last updated: March 7, 2026</strong><br>
+    <strong>Version 1.1 - Last updated: March 14, 2026</strong><br>
     © 2026 Alessandro Faedda - kAIboard
 </p>
 

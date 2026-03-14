@@ -15,14 +15,15 @@
         .contact-box { background-color: #e8f4f8; padding: 20px; border-radius: 5px; margin: 20px 0; }
         .highlight { background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; }
         .important { background-color: #f8d7da; padding: 15px; border-left: 4px solid #dc3545; margin: 20px 0; }
+        .info { background-color: #d1ecf1; padding: 15px; border-left: 4px solid #17a2b8; margin: 20px 0; }
     </style>
 </head>
 <body>
 
 <h1>Veelgestelde vragen - kAIboard</h1>
 
-<p><strong>Laatste update:</strong> 7 maart 2026</p>
-<p><strong>Versie:</strong> 1.0</p>
+<p><strong>Laatste update:</strong> 14 maart 2026</p>
+<p><strong>Versie:</strong> 1.1</p>
 
 <h2>Aan de slag</h2>
 
@@ -39,7 +40,7 @@
         <li>Schakel kAIboard in als invoermethode in de toetsenbordinstellingen van je apparaat</li>
         <li>Stel kAIboard in als je standaardtoetsenbord</li>
         <li>Verleen de machtiging Contacten wanneer daarom wordt gevraagd</li>
-        <li>Schakel de Toegankelijkheidsdienst in wanneer daarom wordt gevraagd</li>
+        <li>Schakel beide Toegankelijkheidsdiensten in: kAIboard gebruikt er twee (één om het actieve contact in chats te detecteren, één om apps met niet-standaard interfaces te ondersteunen). Beide moeten ingeschakeld zijn om automatische wisseling correct te laten werken. Bij het starten van de app herinnert een pop-up je eraan welke machtigingen ontbreken en brengt je door erop te tikken rechtstreeks naar het machtigingsgedeelte in de instellingen van je apparaat</li>
         <li>Schakel in de app-instellingen Meldingstoegang in (nodig voor automatische taalwisseling bij snelle antwoorden vanuit meldingen)</li>
         <li>Schakel in de app-instellingen Meldingsinstellingen in (nodig voor gebruikswaarschuwingen, zoals tokenlimietwaarschuwingen voor AI-vertaling)</li>
         <li>Begin met chatten — de taal wisselt automatisch!</li>
@@ -47,18 +48,21 @@
 </div>
 
 <p class="question">Moet ik iets extra downloaden?</p>
-<p class="answer">Woordenboeken en voorspellingsmodellen worden op aanvraag gedownload. Wanneer je een taal voor het eerst gebruikt, downloadt kAIboard de benodigde bestanden. Je kunt downloads beheren via het scherm Offline modellen in de app.</p>
+<div class="answer">
+    <p>De woordenboeken voor autocorrectie zijn al in de app opgenomen voor alle 13 talen — je hoeft niets te downloaden om autocorrectie te gebruiken. Voor woordvoorspelling moet je echter het voorspellingsmodel downloaden voor elke taal die je wilt gebruiken. Wanneer je een taal voor het eerst gebruikt, kun je het model downloaden via het scherm Offline modellen in de app: tik op de blauwe knop "Downloaden" naast de gewenste taal. Na het downloaden wordt de knop rood "Verwijderen" als je ruimte wilt vrijmaken door talen te verwijderen die je niet meer gebruikt. De talen die je het vaakst gebruikt worden voorgeladen in het geheugen om direct wisselen te garanderen.</p>
+    <p>Als je merkt dat voorspellingen niet werken voor een specifieke taal, controleer dan in het scherm Offline modellen of het voorspellingsmodel voor die taal is gedownload.</p>
+</div>
 
 <h2>Functies</h2>
 
 <p class="question">Hoe werkt automatische taalwisseling?</p>
-<p class="answer">Wanneer je een chat opent, detecteert kAIboard de contactnaam, zoekt het telefoonnummer op in je contacten en leest het internationale netnummer. Bijvoorbeeld: +31 betekent Nederlands, +49 Duits, +33 Frans. De toetsenbordindeling wisselt automatisch in ongeveer 65 milliseconden. Je kunt de taal voor elk contact ook handmatig instellen of wijzigen in het scherm Contactbeheer in de app, of door de spatiebalk lang ingedrukt te houden direct vanuit het toetsenbord.</p>
+<div class="answer">
+    <p>Wanneer je een chat opent, detecteert kAIboard de contactnaam, zoekt het telefoonnummer op in je contacten en leest het internationale netnummer. Bijvoorbeeld: +39 betekent Italiaans, +49 Duits, +33 Frans. De toetsenbordindeling wisselt automatisch in ongeveer 65 milliseconden. Het systeem gebruikt een prioriteitsketen op meerdere niveaus: eerst controleert het of je handmatig een taal hebt ingesteld voor dat contact in die specifieke app, dan of je een globale instelling hebt voor dat contact, vervolgens automatische detectie via het telefoonnetnummer, en tot slot de systeemtaal van het apparaat als terugval.</p>
+    <p>Je kunt de taal voor elk contact ook handmatig op twee manieren instellen of wijzigen: vanuit het scherm Contactbeheer in de app (waar je de aan elk contact gekoppelde taal kunt bekijken en bewerken), of door de spatiebalk lang ingedrukt te houden direct vanuit het toetsenbord terwijl je in een chat bent (er verschijnt een menu met beschikbare talen en je keuze wordt opgeslagen voor dat contact).</p>
+</div>
 
 <p class="question">Wat als ik twee contacten met dezelfde naam heb?</p>
 <p class="answer">kAIboard toont een dialoogvenster waarin je wordt gevraagd het juiste contact te kiezen. Je keuze wordt onthouden voor de huidige sessie, zodat je niet opnieuw wordt gevraagd totdat je de toetsenbordservice herstart.</p>
-
-<p class="question">Hoe werkt AI-vertaling?</p>
-<p class="answer">Houd de Enter-toets lang ingedrukt om vertaling voor een specifieke chat te activeren. Het pictogram van de Enter-toets verandert om aan te geven dat vertaling actief is. Typ je bericht normaal en druk op Enter — je tekst wordt vertaald naar de taal van je contact en vervangt wat je hebt getypt. Houd Enter opnieuw lang ingedrukt om te deactiveren. Vertaling vereist een actief abonnement.</p>
 
 <p class="question">Werkt kAIboard in groepsgesprekken?</p>
 <p class="answer">Ja. Voor groepsgesprekken waarin geen individueel contact kan worden gedetecteerd, kun je handmatig een taal toewijzen. kAIboard onthoudt je keuze met behulp van een privacyveilige hash — de groepsnaam wordt nooit opgeslagen.</p>
@@ -66,20 +70,72 @@
 <p class="question">Welke berichtenapps worden ondersteund?</p>
 <p class="answer">Meer dan 120 apps, waaronder WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack en vele andere — inclusief dating-apps, taxi-apps, bezorgapps en marketplace-apps. Het werkt ook met snelle antwoorden vanuit meldingen.</p>
 
+<div class="info">
+    <p class="question">Opmerking over Telegram</p>
+    <p>Telegram beheert intern contactnamen, bijnamen en numerieke ID's anders dan andere berichtenapps. Door dit Telegram-specifieke gedrag merk je mogelijk af en toe een korte flits van de systeemtaal wanneer je een chat binnengaat of opnieuw opent met een contact dat automatisch is gedetecteerd via het telefoonnummer in je adresboek. De flits verdwijnt snel en het systeem stelt kort daarna de juiste taal in. Voor contacten waaraan je handmatig een taal hebt toegewezen (via het scherm Contactbeheer of het lang indrukken van de spatiebalk), zou de taalwisseling vloeiend en zonder vertraging moeten werken, ook op Telegram. Dit gedrag wordt veroorzaakt door de manier waarop Telegram contactinformatie aan het systeem doorgeeft en is geen probleem van kAIboard. In andere berichtenapps (WhatsApp, Signal, Messenger en andere) zou de taalwisseling vloeiend moeten werken voor zowel automatische als handmatige contacten.</p>
+</div>
+
+<h2>AI-vertaling</h2>
+
+<p class="question">Hoe werkt AI-vertaling?</p>
+<div class="answer">
+    <p>De AI-vertaling van kAIboard werkt met twee besturingsniveaus:</p>
+    <p><strong>1. Algemene schakelaar (in de App-instellingen):</strong> Dit is de hoofdschakelaar. Wanneer deze is uitgeschakeld, kan geen enkele chat vertalen en worden alle vertaalinstellingen voor individuele chats gereset. Wanneer je deze weer inschakelt, moet je de vertaling voor elke chat opnieuw activeren met een nieuwe lange druk op Enter. Dit is opzettelijk: het voorkomt dat vertaling opnieuw wordt geactiveerd in vergeten chats, waardoor tokens worden verbruikt zonder dat je het merkt.</p>
+    <p><strong>2. Activering per chat (lang indrukken van de Enter-toets):</strong> Met de algemene schakelaar ingeschakeld, houd je de Enter-toets lang ingedrukt om vertaling voor dat specifieke gesprek te activeren. Het pictogram van de toets verandert van "↩" (normaal Enter) naar "⇄" (vertaling actief). Een tweede lange druk deactiveert de vertaling voor die chat. De voorkeur wordt per contact opgeslagen: de volgende keer dat je dezelfde chat opent, is de vertaling nog steeds actief (of inactief) zoals je het had achtergelaten.</p>
+    <p><strong>Hoe te vertalen:</strong> Zodra de vertaling is geactiveerd, typ je bericht normaal in jouw taal. Wanneer je op de Enter-toets op het kAIboard-toetsenbord drukt, wordt de tekst automatisch vertaald naar de taal van je contact voordat het wordt verzonden. Gebruik vervolgens de verzendknop van de berichtenapp (naast de tekstbalk) om het vertaalde bericht te verzenden. De vertaling vindt alleen plaats bij het indrukken van de Enter-toets van het toetsenbord — je kunt vrij typen, inclusief leestekens, zonder onderbrekingen.</p>
+    <p>Vertaling vereist een actief abonnement en een internetverbinding. Alleen uitgaande tekst (wat je typt) wordt vertaald — kAIboard leest, onderschept of verwerkt op geen enkele manier inkomende berichten. Deze keuze is opzettelijk om maximale privacy te garanderen: het toetsenbord heeft geen toegang tot de inhoud van ontvangen gesprekken.</p>
+</div>
+
+<p class="question">Wat gebeurt er met contacten in niet-Latijnse talen (Russisch, Oekraïens, Grieks, Georgisch)?</p>
+<div class="answer">
+    <p>Wanneer de vertaling actief is voor een contact wiens taal een niet-Latijns alfabet gebruikt (Russisch, Oekraïens, Grieks, Georgisch), zou het toetsenbord automatisch moeten overschakelen naar de indeling in de systeemtaal van je apparaat (bijv. Nederlands) zodat je comfortabel kunt typen. Je typt in jouw taal en de vertaling zorgt voor de omzetting van de tekst naar het alfabet en de taal van het contact wanneer je op Enter drukt.</p>
+    <p>Wanneer de vertaling wordt gedeactiveerd voor hetzelfde contact (met een tweede lange druk op Enter), zou de indeling automatisch moeten terugkeren naar het oorspronkelijke alfabet van het contact (Cyrillisch, Grieks of Georgisch).</p>
+    <div class="info">
+        <strong>Opmerking:</strong> Deze functie is aanwezig in de app maar is nog niet uitgebreid getest. In sommige gevallen verloopt de automatische indelingswisseling mogelijk niet zoals verwacht. Als je problemen ondervindt, neem dan contact met ons op via support@kaiboard.eu.
+    </div>
+</div>
+
+<p class="question">Is de vertaling veilig? Worden mijn berichten opgeslagen?</p>
+<div class="answer">
+    <p>De tekst wordt veilig verzonden via een HTTPS-versleutelde verbinding naar een Cloudflare-relay, dat het doorstuurt naar de OpenAI API voor vertaling. De tekst wordt nooit op een server opgeslagen — het passeert en wordt onmiddellijk teruggestuurd. De OpenAI API-sleutel wordt nooit op je apparaat blootgesteld.</p>
+    <div class="highlight">
+        <strong>Transparantie over OpenAI:</strong> kAIboard gebruikt OpenAI als externe aanbieder voor vertaling. OpenAI verklaart publiekelijk dat gegevens die via de API worden verzonden niet worden gebruikt om hun modellen te trainen. Standaard Contractclausules voor gegevensoverdracht buiten de EU zijn van kracht. Echter, we beschikken momenteel niet over een formele Verwerkersovereenkomst met OpenAI. We raden aan om geen zeer gevoelige informatie (gezondheids-, financiële, juridische gegevens) te vertalen. Raadpleeg voor meer details het <a href="https://openai.com/enterprise-privacy" target="_blank">privacybeleid van de OpenAI API</a>.
+    </div>
+</div>
+
+<h2>Voorspelling &amp; autocorrectie</h2>
+
+<p class="question">Hoe goed zijn de voorspellingen van kAIboard vergeleken met andere toetsenborden?</p>
+<p class="answer">De voorspellingsengine van kAIboard is gebouwd op stevige fundamenten: statistische taalmodellen, uitgebreide woordenboeken en een gepersonaliseerd leersysteem dat verbetert met elk woord dat je typt — alles draait volledig op je apparaat zonder cloudafhankelijkheid. Dat gezegd hebbende, kAIboard is gebouwd door een enkele ontwikkelaar. Grote techbedrijven hebben teams van honderden engineers die werken aan neurale modellen getraind op miljarden datapunten. De voorspellingen van kAIboard zijn degelijk en verbeteren merkbaar naarmate je ze gebruikt, maar ik zal niet beweren die schaal te evenaren. Wat kAIboard echt onderscheidt, is iets dat geen enkel ander toetsenbord doet: weten welke taal je nodig hebt voordat je ook maar één teken typt.</p>
+
+<p class="question">Hoe werkt de autocorrectie?</p>
+<div class="answer">
+    <p>De autocorrectie van kAIboard gebruikt een multifactorsysteem dat de bewerkingsafstand analyseert tussen het getypte woord en de kandidaten in het woordenboek, de zinscontext (vorige woorden), de werkelijke gebruiksfrequentie van woorden, de nabijheid van toetsen op het toetsenbord en je persoonlijke typgewoonten. Het systeem ondersteunt de correctie van transposities (omgewisselde letters), ontbrekende dubbele letters, per ongeluk ingedrukte naburige toetsen en ontbrekende accenttekens — in alle 13 ondersteunde talen.</p>
+    <p>De autocorrectie is opzettelijk terughoudend: het toont correcties in de suggestiebalk en past ze alleen automatisch toe wanneer het systeem voldoende zeker is. Niets is frustrerender dan een toetsenbord dat overschrijft wat je eigenlijk wilde typen. Jij houdt de controle.</p>
+</div>
+
+<p class="question">Leert kAIboard van mijn typgewoonten?</p>
+<p class="answer">Ja. Het leersysteem registreert de woorden die je het vaakst gebruikt, de meest voorkomende woordcombinaties en de eigennamen die je typt. De suggesties verbeteren in de loop van de tijd met een intelligent vervalssysteem dat recente gewoonten relevanter houdt dan oude. Het leren vindt alleen plaats wanneer je een suggestie uit de balk aantikt — automatische correcties worden niet geregistreerd om te voorkomen dat correctiefouten als gewoonten worden aangeleerd. Alle leergegevens blijven op je apparaat en kunnen op elk moment worden verwijderd.</p>
+
 <h2>Privacy &amp; gegevens</h2>
 
 <p class="question">Welke gegevens verzamelt kAIboard?</p>
 <p class="answer">kAIboard volgt een local-first benadering. Contactdetectie, autocorrectie, voorspellingen en taalvoorkeuren vinden allemaal plaats op je apparaat. De enige gegevens die extern worden verzonden is de tekst die je kiest om te vertalen (via een beveiligde HTTPS-verbinding), en deze wordt nooit op een server opgeslagen. Geen analyses, geen tracking, geen reclame-ID's.</p>
 
 <p class="question">Voldoet kAIboard aan de AVG?</p>
-<p class="answer">Ja. kAIboard biedt vier opties in het gedeelte Privacy: je gegevens exporteren als JSON, alleen leergegevens verwijderen, alle lokale gegevens verwijderen of alle cloudgegevens verwijderen. Cloudgegevens (abonnementsinformatie) worden automatisch opgeruimd na 90–365 dagen. Crashrapporten zijn optioneel en vereisen uitdrukkelijke toestemming.</p>
+<div class="answer">
+    <p>Ja. kAIboard biedt vier opties in het gedeelte Privacy: je gegevens exporteren als JSON, alleen leergegevens verwijderen, alle lokale gegevens verwijderen of alle cloudgegevens verwijderen. Cloudgegevens (abonnementsinformatie) worden automatisch opgeruimd na 90–365 dagen inactiviteit.</p>
+    <p>Crashrapporten zijn volledig optioneel: je kunt ze op elk moment in- of uitschakelen in de Instellingen. Bij de eerste activering wordt een bevestigingsdialoog getoond. Crashrapporten bevatten alleen technische foutinformatie en apparaatmetadata — ze bevatten nooit getypte tekst, contactnamen of andere persoonlijke gegevens.</p>
+</div>
+
+<p class="question">Wat zijn de beheerderslogboeken die zichtbaar zijn in de app?</p>
+<div class="answer">
+    <p>Om maximale transparantie te garanderen registreert kAIboard automatisch een logboek telkens wanneer er een wijziging aan je account wordt aangebracht vanuit de serverzijde — bijvoorbeeld bij een tokenvergoeding vanwege een geschil of een technisch probleem. Deze logboeken zijn zichtbaar in het betreffende gedeelte in de app, zodat je op elk moment kunt controleren of en wanneer er een bewerking op je account is uitgevoerd. Als er geen logboeken aanwezig zijn, betekent dit dat er nooit een wijziging aan de serverzijde is aangebracht. Beheerderslogboeken worden automatisch verwijderd conform het gegevensretentiebeleid, of je kunt ze handmatig verwijderen met de knop "Cloudgegevens verwijderen" in het gedeelte Privacy.</p>
+</div>
 
 <p class="question">Kan ik al mijn gegevens verwijderen?</p>
 <div class="answer">
     <p>Ja. Ga naar Instellingen → Privacy en gebruik de beschikbare knoppen. Je kunt je gegevens exporteren als JSON, leergegevens, alle lokale gegevens of cloudgegevens afzonderlijk verwijderen. Het verwijderen van de app verwijdert automatisch alle lokale gegevens.</p>
-    <div class="important">
-        <strong>Let op:</strong> Als je je abonnement opzegt en de cloudgegevens verwijdert tijdens de resterende al betaalde periode (respijtperiode), is de verwijdering onmiddellijk en doe je definitief afstand van de resterende periode en het huidige tokensaldo.
-    </div>
 </div>
 
 <h2>Prijzen &amp; abonnement</h2>
@@ -95,21 +151,15 @@
 
 <p class="question">Wat gebeurt er als ik mijn abonnement opzeg en de app opnieuw installeer?</p>
 <div class="answer">
+    <p><strong>Met een actief abonnement (niet opgezegd):</strong> Als je de app verwijdert en opnieuw installeert, of deze installeert op een nieuw apparaat of op meerdere apparaten met hetzelfde Google-account, worden het abonnement en het tokensaldo automatisch gesynchroniseerd via Google Play en Firebase. Je hoeft niets te doen — het herstel gebeurt automatisch bij de eerste keer starten.</p>
+    <p><strong>Met een opgezegd abonnement (respijtperiode):</strong> Als je de app opnieuw installeert op hetzelfde apparaat, vindt het systeem het abonnement en het tokensaldo via Firebase en herstelt deze automatisch, ook tijdens de respijtperiode. Op andere apparaten waarop de app al was geïnstalleerd met hetzelfde account, zou het herstel automatisch moeten plaatsvinden als het apparaat al in het systeem was geregistreerd.</p>
     <div class="important">
-        <strong>Belangrijk:</strong> Als je je abonnement opzegt en de cloudgegevens verwijdert tijdens de resterende al betaalde periode (respijtperiode), is de verwijdering onmiddellijk en doe je definitief afstand van de resterende periode en het huidige tokensaldo. Evenzo gaan de resterende dagen en het tokensaldo permanent verloren als je de app verwijdert of een fabrieksreset uitvoert tijdens deze respijtperiode, omdat Google Play vrijwillig opgezegde abonnementen niet herstelt bij een nieuwe installatie.
+        <strong>Belangrijk:</strong> Als je tijdens de respijtperiode de app installeert op een geheel nieuw apparaat dat nog nooit kAIboard heeft gehad met jouw account, zijn de resterende dagen en het tokensaldo mogelijk niet te herstellen om veiligheidsredenen, aangezien het nieuwe apparaat nog niet in het systeem is geregistreerd. Evenzo, als je tijdens de respijtperiode de cloudgegevens verwijdert vanuit de app, is de verwijdering onmiddellijk en betekent dit definitief afstand doen van de resterende periode en het tokensaldo.
     </div>
 </div>
 
 <p class="question">Hoe werkt de back-up?</p>
 <p class="answer">kAIboard biedt twee back-upopties. Alle gebruikers kunnen een lokale back-up maken van hun instellingen en leergegevens. Abonnees kunnen ook een back-up maken naar hun persoonlijke Google Drive. In beide gevallen wordt het vertaal-tokensaldo altijd gesynchroniseerd vanuit de cloud — het wordt nooit opgeslagen in het back-upbestand, om duplicatie te voorkomen.</p>
-
-<h2>Voorspelling &amp; autocorrectie</h2>
-
-<p class="question">Hoe goed zijn de voorspellingen van kAIboard vergeleken met andere toetsenborden?</p>
-<p class="answer">De voorspellingsengine van kAIboard is gebouwd op stevige fundamenten: statistische taalmodellen, uitgebreide woordenboeken en een gepersonaliseerd leersysteem dat verbetert met elk woord dat je typt — alles draait volledig op je apparaat zonder cloudafhankelijkheid. Dat gezegd hebbende, kAIboard is gebouwd door een enkele ontwikkelaar. Grote techbedrijven hebben teams van honderden engineers die werken aan neurale modellen getraind op miljarden datapunten. De voorspellingen van kAIboard zijn degelijk en verbeteren merkbaar naarmate je ze gebruikt, maar ik zal niet beweren die schaal te evenaren. Wat kAIboard echt onderscheidt, is iets dat geen enkel ander toetsenbord doet: weten welke taal je nodig hebt voordat je ook maar één teken typt.</p>
-
-<p class="question">Waarom vervangt autocorrectie woorden niet automatisch?</p>
-<p class="answer">Dat is een bewuste keuze. De autocorrectie van kAIboard is opzettelijk terughoudend — het suggereert correcties in de suggestiebalk in plaats van woorden geforceerd te vervangen. Niets is frustrerender dan een toetsenbord dat overschrijft wat je eigenlijk wilde typen. Jij houdt de controle.</p>
 
 <h2>Probleemoplossing</h2>
 
@@ -117,7 +167,10 @@
 <p class="answer">Zorg ervoor dat zowel de machtiging Contacten als de Toegankelijkheidsdienst zijn ingeschakeld. Controleer of het contact een telefoonnummer met internationaal netnummer heeft in je adresboek.</p>
 
 <p class="question">Vertaling werkt niet.</p>
-<p class="answer">Controleer of je een actief abonnement hebt en of vertaling is ingeschakeld (de Enter-toets moet het vertaalpictogram ⇄ tonen). Je hebt ook een internetverbinding nodig voor vertaling.</p>
+<p class="answer">Controleer of je een actief abonnement hebt met beschikbare tokens. Controleer of de algemene vertaalschakelaar is ingeschakeld in de app-instellingen. Zorg ervoor dat je de vertaling voor de specifieke chat hebt geactiveerd met een lange druk op de Enter-toets (het pictogram moet ⇄ tonen). Je hebt ook een internetverbinding nodig voor vertaling.</p>
+
+<p class="question">Het pictogram van de Enter-toets toont niet de vertaalpijlen.</p>
+<p class="answer">Controleer of de algemene vertaalschakelaar is ingeschakeld in de app-instellingen. Als deze is ingeschakeld, probeer dan de chat te verlaten en opnieuw te openen. Het pictogram verandert alleen in chats waar je de vertaling hebt geactiveerd met een lange druk op Enter.</p>
 
 <div class="contact-box">
     <p class="question">Hulp nodig?</p>
@@ -126,7 +179,7 @@
 </div>
 
 <p style="text-align: center; color: #7f8c8d; margin-top: 50px;">
-    <strong>Versie 1.0 - Laatste update: 7 maart 2026</strong><br>
+    <strong>Versie 1.1 - Laatste update: 14 maart 2026</strong><br>
     © 2026 Alessandro Faedda - kAIboard
 </p>
 

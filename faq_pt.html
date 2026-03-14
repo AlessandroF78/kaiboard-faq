@@ -15,14 +15,15 @@
         .contact-box { background-color: #e8f4f8; padding: 20px; border-radius: 5px; margin: 20px 0; }
         .highlight { background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0; }
         .important { background-color: #f8d7da; padding: 15px; border-left: 4px solid #dc3545; margin: 20px 0; }
+        .info { background-color: #d1ecf1; padding: 15px; border-left: 4px solid #17a2b8; margin: 20px 0; }
     </style>
 </head>
 <body>
 
 <h1>Perguntas frequentes - kAIboard</h1>
 
-<p><strong>Última atualização:</strong> 7 de março de 2026</p>
-<p><strong>Versão:</strong> 1.0</p>
+<p><strong>Última atualização:</strong> 14 de março de 2026</p>
+<p><strong>Versão:</strong> 1.1</p>
 
 <h2>Para começar</h2>
 
@@ -39,7 +40,7 @@
         <li>Ative o kAIboard como método de introdução nas definições de teclado do dispositivo</li>
         <li>Defina o kAIboard como teclado predefinido</li>
         <li>Conceda a permissão de Contactos quando solicitado</li>
-        <li>Ative o serviço de Acessibilidade quando solicitado</li>
+        <li>Ative ambos os serviços de Acessibilidade: o kAIboard utiliza dois (um para detetar o contacto ativo nas conversas, outro para suportar aplicações com interfaces não padrão). Ambos devem estar ativados para que a mudança automática funcione corretamente. Ao iniciar a aplicação, um pop-up lembrá-lo-á das permissões em falta e, tocando nele, levá-lo-á diretamente à secção de permissões nas definições do seu dispositivo</li>
         <li>Nas definições da aplicação, ative o Acesso a Notificações (necessário para a mudança automática de idioma nas respostas rápidas a partir de notificações)</li>
         <li>Nas definições da aplicação, ative as Definições de Notificações (necessárias para alertas de utilização, como avisos de limite de tokens para a Tradução AI)</li>
         <li>Comece a conversar — o idioma muda automaticamente!</li>
@@ -47,18 +48,21 @@
 </div>
 
 <p class="question">Preciso de descarregar algo adicional?</p>
-<p class="answer">Os dicionários e modelos de previsão são descarregados a pedido. Quando utilizar um idioma pela primeira vez, o kAIboard descarregará os ficheiros necessários. Pode gerir os downloads a partir do ecrã Modelos Offline dentro da aplicação.</p>
+<div class="answer">
+    <p>Os dicionários para a correção automática já estão incluídos na aplicação para os 13 idiomas — não precisa de descarregar nada para usar a correção automática. Para a previsão da próxima palavra, no entanto, é necessário descarregar o modelo preditivo para cada idioma que pretenda utilizar. Quando utilizar um idioma pela primeira vez, pode descarregar o modelo a partir do ecrã Modelos Offline dentro da aplicação: toque no botão azul «Descarregar» junto ao idioma desejado. Após a descarga, o botão fica vermelho «Remover» caso pretenda libertar espaço removendo idiomas que já não utiliza. Os idiomas que utiliza com mais frequência são pré-carregados em memória para garantir uma mudança instantânea.</p>
+    <p>Se notar que as previsões não funcionam para um idioma específico, verifique no ecrã Modelos Offline se o modelo preditivo foi descarregado para esse idioma.</p>
+</div>
 
 <h2>Funcionalidades</h2>
 
 <p class="question">Como funciona a mudança automática de idioma?</p>
-<p class="answer">Quando abre uma conversa, o kAIboard deteta o nome do contacto, procura o número de telefone nos seus contactos e lê o indicativo internacional. Por exemplo, +351 significa português, +49 alemão, +33 francês. A disposição do teclado muda automaticamente em cerca de 65 milissegundos. Também pode definir ou alterar o idioma de qualquer contacto manualmente no ecrã Gestão de Contactos dentro da aplicação, ou mantendo premida a barra de espaços diretamente a partir do teclado.</p>
+<div class="answer">
+    <p>Quando abre uma conversa, o kAIboard deteta o nome do contacto, procura o número de telefone nos seus contactos e lê o indicativo internacional. Por exemplo, +39 significa italiano, +49 alemão, +33 francês. A disposição do teclado muda automaticamente em cerca de 65 milissegundos. O sistema utiliza uma cadeia de prioridade multinível: primeiro verifica se definiu manualmente um idioma para esse contacto nessa aplicação específica, depois se tem uma definição global para esse contacto, em seguida a deteção automática pelo indicativo telefónico e, por fim, o idioma de sistema do dispositivo como recurso.</p>
+    <p>Também pode definir ou alterar o idioma de qualquer contacto manualmente de duas formas: a partir do ecrã Gestão de Contactos dentro da aplicação (onde pode ver e editar o idioma associado a cada contacto da sua lista), ou mantendo premida a barra de espaços diretamente a partir do teclado enquanto está numa conversa (aparece um menu com os idiomas disponíveis e a sua escolha é guardada para esse contacto).</p>
+</div>
 
 <p class="question">E se eu tiver dois contactos com o mesmo nome?</p>
 <p class="answer">O kAIboard apresenta um diálogo pedindo-lhe para escolher o contacto correto. A sua escolha é lembrada durante a sessão atual, por isso não lhe será perguntado novamente até reiniciar o serviço de teclado.</p>
-
-<p class="question">Como funciona a Tradução AI?</p>
-<p class="answer">Mantenha premida a tecla Enter para ativar a tradução para uma conversa específica. O ícone da tecla Enter muda para indicar que a tradução está ativa. Escreva a sua mensagem normalmente e prima Enter — o seu texto é traduzido para o idioma do contacto e substitui o que escreveu. Mantenha premido Enter novamente para desativar. A tradução requer uma subscrição ativa.</p>
 
 <p class="question">O kAIboard funciona em conversas de grupo?</p>
 <p class="answer">Sim. Para conversas de grupo onde não há um contacto individual para detetar, pode atribuir manualmente um idioma. O kAIboard lembra-se da sua escolha usando um hash seguro para a privacidade — o nome do grupo nunca é armazenado.</p>
@@ -66,20 +70,72 @@
 <p class="question">Que aplicações de mensagens são suportadas?</p>
 <p class="answer">Mais de 120 aplicações, incluindo WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack e muitas mais — incluindo aplicações de encontros, transporte, entrega de comida e marketplace. Também funciona com respostas rápidas a partir de notificações.</p>
 
+<div class="info">
+    <p class="question">Nota sobre o Telegram</p>
+    <p>O Telegram gere internamente os nomes de contacto, os nomes de utilizador e os IDs numéricos de forma diferente de outras aplicações de mensagens. Devido a este comportamento específico do Telegram, poderá ocasionalmente notar um breve flash do idioma de sistema ao entrar ou reentrar numa conversa com um contacto detetado automaticamente pelo número de telefone da sua lista de contactos. O flash resolve-se rapidamente e o sistema define o idioma correto pouco depois. Para os contactos a quem atribuiu manualmente um idioma (através do ecrã Gestão de Contactos ou do toque longo na barra de espaços), a mudança de idioma deverá funcionar de forma fluida e sem atrasos, mesmo no Telegram. Este comportamento é causado pela forma como o Telegram comunica as informações de contacto ao sistema e não é um problema do kAIboard. Nas outras aplicações de mensagens (WhatsApp, Signal, Messenger e outras), a mudança de idioma deverá funcionar de forma fluida tanto para contactos automáticos como manuais.</p>
+</div>
+
+<h2>Tradução AI</h2>
+
+<p class="question">Como funciona a Tradução AI?</p>
+<div class="answer">
+    <p>A tradução AI do kAIboard funciona com dois níveis de controlo:</p>
+    <p><strong>1. Interruptor geral (nas Definições da aplicação):</strong> Este é o interruptor principal. Quando está desativado, nenhuma conversa pode traduzir e todas as definições de tradução das conversas individuais são repostas. Quando o reativa, terá de reativar a tradução para cada conversa com um novo toque longo em Enter. Isto é intencional: evita que a tradução se reative em conversas esquecidas, consumindo tokens sem que se aperceba.</p>
+    <p><strong>2. Ativação por conversa (toque longo na tecla Enter):</strong> Com o interruptor geral ativado, mantenha premida a tecla Enter para ativar a tradução para essa conversa específica. O ícone da tecla muda de «↩» (Enter normal) para «⇄» (tradução ativa). Um segundo toque longo desativa a tradução para essa conversa. A preferência é guardada por contacto: na próxima vez que abrir a mesma conversa, a tradução continuará ativa (ou inativa) como a deixou.</p>
+    <p><strong>Como traduzir:</strong> Uma vez ativada a tradução, escreva a sua mensagem normalmente no seu idioma. Quando premir a tecla Enter no teclado kAIboard, o texto é automaticamente traduzido para o idioma do seu contacto antes do envio. Em seguida, utilize o botão de envio da aplicação de mensagens (junto à barra de texto) para enviar a mensagem traduzida. A tradução ocorre apenas ao premir a tecla Enter do teclado — pode escrever livremente, incluindo pontuação, sem interrupções.</p>
+    <p>A tradução requer uma subscrição ativa e uma ligação à internet. Apenas o texto de saída (o que escreve) é traduzido — o kAIboard não lê, não interceta e não processa de forma alguma as mensagens recebidas. Esta escolha é intencional para garantir a máxima privacidade: o teclado não tem acesso ao conteúdo das conversas recebidas.</p>
+</div>
+
+<p class="question">O que acontece com os contactos em idiomas não latinos (russo, ucraniano, grego, georgiano)?</p>
+<div class="answer">
+    <p>Quando a tradução está ativa para um contacto cujo idioma utiliza um alfabeto não latino (russo, ucraniano, grego, georgiano), o teclado deverá mudar automaticamente para a disposição no idioma de sistema do dispositivo (ex.: português) para que possa escrever confortavelmente. Escreve no seu idioma e a tradução encarrega-se de converter o texto para o alfabeto e o idioma do contacto quando prime Enter.</p>
+    <p>Quando a tradução é desativada para o mesmo contacto (com um segundo toque longo em Enter), a disposição deverá voltar automaticamente ao alfabeto nativo do contacto (cirílico, grego ou georgiano).</p>
+    <div class="info">
+        <strong>Nota:</strong> Esta funcionalidade está presente na aplicação mas ainda não foi exaustivamente testada. Em alguns casos, a mudança automática de disposição poderá não ocorrer como esperado. Se encontrar problemas, contacte-nos em support@kaiboard.eu.
+    </div>
+</div>
+
+<p class="question">A tradução é segura? As minhas mensagens são guardadas?</p>
+<div class="answer">
+    <p>O texto é transmitido de forma segura através de uma ligação HTTPS encriptada para um relay da Cloudflare, que o reencaminha para a API da OpenAI para tradução. O texto nunca é guardado em nenhum servidor — transita e é devolvido imediatamente. A chave da API da OpenAI nunca é exposta no seu dispositivo.</p>
+    <div class="highlight">
+        <strong>Transparência sobre a OpenAI:</strong> O kAIboard utiliza a OpenAI como fornecedor externo para tradução. A OpenAI declara publicamente que os dados enviados através da API não são utilizados para treinar os seus modelos. As Cláusulas Contratuais Tipo para transferências de dados fora da UE estão em vigor. No entanto, atualmente não dispomos de um Acordo de Tratamento de Dados (DPA) formal com a OpenAI. Recomendamos evitar traduzir informações altamente sensíveis (dados de saúde, financeiros, jurídicos). Para mais detalhes, consulte a <a href="https://openai.com/enterprise-privacy" target="_blank">política de privacidade da API da OpenAI</a>.
+    </div>
+</div>
+
+<h2>Previsão e correção automática</h2>
+
+<p class="question">Quão boas são as previsões do kAIboard em comparação com outros teclados?</p>
+<p class="answer">O motor de previsão do kAIboard é construído sobre bases sólidas: modelos estatísticos de linguagem, dicionários abrangentes e um sistema de aprendizagem personalizado que melhora com cada palavra que escreve — tudo funciona inteiramente no seu dispositivo sem qualquer dependência da nuvem. Dito isto, o kAIboard é desenvolvido por um único programador. As grandes empresas de tecnologia dispõem de equipas de centenas de engenheiros a trabalhar em modelos neurais treinados com milhares de milhões de dados. As previsões do kAIboard são sólidas e melhoram notavelmente com o uso, mas não pretendo igualar essa escala. O que verdadeiramente distingue o kAIboard é algo que nenhum outro teclado faz: saber de que idioma precisa antes de escrever um único carácter.</p>
+
+<p class="question">Como funciona a correção automática?</p>
+<div class="answer">
+    <p>A correção automática do kAIboard utiliza um sistema multifatorial que analisa a distância de edição entre a palavra digitada e os candidatos no dicionário, o contexto da frase (palavras anteriores), a frequência real de utilização das palavras, a proximidade das teclas no teclado e os seus hábitos pessoais de escrita. O sistema suporta a correção de transposições (letras invertidas), duplas em falta, teclas adjacentes premidas acidentalmente e caracteres acentuados em falta — nos 13 idiomas suportados.</p>
+    <p>A correção automática é intencionalmente conservadora: mostra as correções na barra de sugestões e aplica-as automaticamente apenas quando o sistema tem confiança suficiente. Nada é mais frustrante do que um teclado que sobrescreve o que realmente queria escrever. O controlo é seu.</p>
+</div>
+
+<p class="question">O kAIboard aprende com os meus hábitos de escrita?</p>
+<p class="answer">Sim. O sistema de aprendizagem regista as palavras que utiliza com mais frequência, as combinações de palavras mais comuns e os nomes próprios que escreve. As sugestões melhoram ao longo do tempo com um sistema de decaimento inteligente que mantém os hábitos recentes mais relevantes do que os antigos. A aprendizagem ocorre apenas quando toca numa sugestão da barra — as correções automáticas não são registadas para evitar que erros de correção sejam aprendidos como hábitos. Todos os dados de aprendizagem permanecem no seu dispositivo e podem ser eliminados a qualquer momento.</p>
+
 <h2>Privacidade e dados</h2>
 
 <p class="question">Que dados recolhe o kAIboard?</p>
 <p class="answer">O kAIboard segue uma abordagem local-first. A deteção de contactos, correção automática, previsões e preferências de idioma ocorrem todas no seu dispositivo. Os únicos dados enviados externamente são o texto que escolhe traduzir (através de ligação HTTPS segura), e nunca é guardado em nenhum servidor. Sem análises, sem rastreamento, sem identificadores de publicidade.</p>
 
 <p class="question">O kAIboard está em conformidade com o RGPD?</p>
-<p class="answer">Sim. O kAIboard oferece quatro opções na secção Privacidade: exportar os seus dados em formato JSON, eliminar apenas os dados de aprendizagem, eliminar todos os dados locais ou eliminar todos os dados na nuvem. Os dados na nuvem (informações de subscrição) são automaticamente eliminados após 90–365 dias. Os relatórios de falhas são opcionais e requerem consentimento explícito.</p>
+<div class="answer">
+    <p>Sim. O kAIboard oferece quatro opções na secção Privacidade: exportar os seus dados em formato JSON, eliminar apenas os dados de aprendizagem, eliminar todos os dados locais ou eliminar todos os dados na nuvem. Os dados na nuvem (informações de subscrição) são automaticamente eliminados após 90–365 dias de inatividade.</p>
+    <p>Os relatórios de falhas (crash reports) são completamente opcionais: pode ativá-los ou desativá-los a qualquer momento nas Definições. Quando os ativa pela primeira vez, é apresentado um diálogo de confirmação. Os relatórios de falhas contêm apenas informações técnicas sobre erros e metadados do dispositivo — nunca contêm texto digitado, nomes de contactos ou outros dados pessoais.</p>
+</div>
+
+<p class="question">O que são os registos de administrador visíveis na aplicação?</p>
+<div class="answer">
+    <p>Para garantir a máxima transparência, o kAIboard regista automaticamente um log sempre que é efetuada uma alteração na sua conta do lado do servidor — por exemplo, em caso de reembolso de tokens devido a uma disputa ou problema técnico. Estes registos são visíveis na secção dedicada dentro da aplicação, para que possa verificar a qualquer momento se e quando foi efetuada uma operação na sua conta. Se não existirem registos, significa que nunca foi efetuada qualquer alteração do lado do servidor. Os registos de administrador são automaticamente eliminados de acordo com a política de retenção de dados, ou pode eliminá-los manualmente com o botão «Eliminar dados na nuvem» na secção Privacidade.</p>
+</div>
 
 <p class="question">Posso eliminar todos os meus dados?</p>
 <div class="answer">
     <p>Sim. Vá a Definições → Privacidade e utilize os botões disponíveis. Pode exportar os seus dados em formato JSON, eliminar os dados de aprendizagem, todos os dados locais ou os dados na nuvem separadamente. Desinstalar a aplicação remove automaticamente todos os dados locais.</p>
-    <div class="important">
-        <strong>Nota:</strong> Se cancelar a sua subscrição e eliminar os dados na nuvem durante o período restante já pago (período de carência), a eliminação é imediata e renuncia definitivamente ao período restante e ao saldo de tokens atual. Do mesmo modo, se desinstalar a aplicação ou efetuar uma reposição de fábrica durante este período de carência, os dias restantes e o saldo de tokens são perdidos definitivamente porque o Google Play não restaura subscrições canceladas voluntariamente numa nova instalação.
-    </div>
 </div>
 
 <h2>Preços e subscrição</h2>
@@ -93,23 +149,17 @@
 <p class="question">Posso usar a minha subscrição em vários dispositivos?</p>
 <p class="answer">Sim. O seu saldo de tokens é sincronizado em todos os dispositivos que utilizam a mesma conta Google Play. O limite mensal de tokens é partilhado — por exemplo, se tiver 250.000 tokens com o plano Plus, esse total é partilhado entre todos os seus dispositivos.</p>
 
-<p class="question">O que acontece se eu cancelar a assinatura e reinstalar o app?</p>
+<p class="question">O que acontece se eu cancelar a subscrição e reinstalar a aplicação?</p>
 <div class="answer">
+    <p><strong>Com subscrição ativa (não cancelada):</strong> Se desinstalar e reinstalar a aplicação, ou a instalar num novo dispositivo ou em vários dispositivos com a mesma conta Google, a subscrição e o saldo de tokens sincronizam-se automaticamente através do Google Play e do Firebase. Não precisa de fazer nada — a restauração ocorre automaticamente no primeiro arranque.</p>
+    <p><strong>Com subscrição cancelada (período de carência):</strong> Se reinstalar a aplicação no mesmo dispositivo, o sistema encontra a subscrição e o saldo de tokens através do Firebase e restaura-os automaticamente, mesmo durante o período de carência. Noutros dispositivos que já tinham a aplicação instalada com a mesma conta, a restauração deverá ocorrer automaticamente se o dispositivo já estiver registado no sistema.</p>
     <div class="important">
-        <strong>Importante:</strong> Se cancelar a sua subscrição e posteriormente desinstalar a aplicação ou efetuar uma reposição de fábrica durante o período restante já pago (período de carência), os dias restantes e o saldo atual de tokens não poderão ser recuperados. Isto acontece porque o Google Play não restaura subscrições canceladas voluntariamente numa nova instalação. Certifique-se de que utiliza os seus tokens restantes antes de desinstalar. Se reinstalar sem ter cancelado a subscrição, a restauração ocorre normalmente através do Google Play.
+        <strong>Importante:</strong> Se durante o período de carência instalar a aplicação num dispositivo completamente novo que nunca teve o kAIboard com a sua conta, os dias restantes e o saldo de tokens poderão não ser recuperáveis por motivos de segurança, uma vez que o novo dispositivo ainda não está registado no sistema. Da mesma forma, se eliminar os dados na nuvem a partir da aplicação durante o período de carência, a eliminação é imediata e implica a renúncia definitiva ao período restante e ao saldo de tokens.
     </div>
 </div>
 
-<p class="question">Como funciona o backup?</p>
-<p class="answer">O kAIboard oferece duas opções de backup. Todos os usuários podem criar um backup local de suas configurações e dados de aprendizado. Assinantes também podem fazer backup no Google Drive pessoal. Em ambos os casos, o saldo de tokens de tradução é sempre sincronizado pela nuvem — nunca é salvo no arquivo de backup, para evitar duplicações.</p>
-
-<h2>Previsão e correção automática</h2>
-
-<p class="question">Quão boas são as previsões do kAIboard em comparação com outros teclados?</p>
-<p class="answer">O motor de previsão do kAIboard é construído sobre bases sólidas: modelos estatísticos de linguagem, dicionários abrangentes e um sistema de aprendizagem personalizado que melhora com cada palavra que escreve — tudo funciona inteiramente no seu dispositivo sem qualquer dependência da nuvem. Dito isto, o kAIboard é desenvolvido por um único programador. As grandes empresas de tecnologia dispõem de equipas de centenas de engenheiros a trabalhar em modelos neurais treinados com milhares de milhões de dados. As previsões do kAIboard são sólidas e melhoram notavelmente com o uso, mas não pretendo igualar essa escala. O que verdadeiramente distingue o kAIboard é algo que nenhum outro teclado faz: saber de que idioma precisa antes de escrever um único carácter.</p>
-
-<p class="question">Por que a correção automática não substitui palavras automaticamente?</p>
-<p class="answer">Por opção de design. A correção automática do kAIboard é intencionalmente conservadora — sugere correções na barra de sugestões em vez de substituir palavras à força. Nada é mais frustrante do que um teclado que sobrescreve o que realmente queria escrever. O controlo é seu.</p>
+<p class="question">Como funciona a cópia de segurança?</p>
+<p class="answer">O kAIboard oferece duas opções de cópia de segurança. Todos os utilizadores podem criar uma cópia de segurança local das suas definições e dados de aprendizagem. Os subscritores podem também fazer cópia de segurança no Google Drive pessoal. Em ambos os casos, o saldo de tokens de tradução é sempre sincronizado a partir da nuvem — nunca é guardado no ficheiro de cópia de segurança, para evitar duplicações.</p>
 
 <h2>Resolução de problemas</h2>
 
@@ -117,7 +167,10 @@
 <p class="answer">Certifique-se de que tanto a permissão de Contactos como o serviço de Acessibilidade estão ativados. Verifique se o contacto tem um número de telefone com indicativo internacional na sua lista de contactos.</p>
 
 <p class="question">A tradução não funciona.</p>
-<p class="answer">Verifique se tem uma subscrição ativa e se a tradução está ativada (a tecla Enter deve mostrar o ícone de tradução ⇄). Também precisa de uma ligação à internet para a tradução.</p>
+<p class="answer">Verifique se tem uma subscrição ativa com tokens disponíveis. Verifique se o interruptor geral de tradução está ativado nas Definições da aplicação. Certifique-se de que ativou a tradução para a conversa específica com um toque longo na tecla Enter (o ícone deve mostrar ⇄). Também precisa de uma ligação à internet para a tradução.</p>
+
+<p class="question">O ícone da tecla Enter não mostra as setas de tradução.</p>
+<p class="answer">Verifique se o interruptor geral de tradução está ativado nas Definições da aplicação. Se estiver ativado, tente sair da conversa e voltar a entrar. O ícone só muda nas conversas onde ativou a tradução com um toque longo em Enter.</p>
 
 <div class="contact-box">
     <p class="question">Precisa de ajuda?</p>
@@ -126,7 +179,7 @@
 </div>
 
 <p style="text-align: center; color: #7f8c8d; margin-top: 50px;">
-    <strong>Versão 1.0 - Última atualização: 7 de março de 2026</strong><br>
+    <strong>Versão 1.1 - Última atualização: 14 de março de 2026</strong><br>
     © 2026 Alessandro Faedda - kAIboard
 </p>
 

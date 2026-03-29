@@ -4,80 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Frequently Asked Questions - kAIboard</title>
+    <title>Frequently Asked Questions &mdash; kAIboard</title>
     <style>
-        body {
-            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #111827;
-            background-color: #F4F7FA;
+        :root {
+            --teal: #19C7C7;
+            --teal-dark: #0FA3A3;
+            --teal-soft: rgba(25, 199, 199, 0.08);
+            --bg-page: #F0F6F6;
+            --bg-card: #FFFFFF;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-card: rgba(25, 199, 199, 0.15);
+            --text-primary: #1A2E35;
+            --text-secondary: #4A6068;
+            --text-muted: #8A9EA6;
+            --font-main: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --max-width: 800px;
         }
-        h1 {
-            color: #111827;
-            border-bottom: 3px solid #0FA3A3;
-            padding-bottom: 10px;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        a { color: var(--teal-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--teal); }
+        .content { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+        h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+        .subtitle { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 40px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; padding: 36px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); overflow: hidden; }
+        .card h2 { font-size: 1.15rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 16px; letter-spacing: -0.01em; }
+        .card h3 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-top: 20px; margin-bottom: 10px; }
+        .card p, .card li { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px; }
+        .card ul, .card ol { padding-left: 20px; margin-bottom: 12px; }
+        .card li { margin-bottom: 6px; }
+        .card ul li { list-style: disc; }
+        .card ol li { list-style: decimal; }
+        .question { font-weight: 700; color: var(--text-primary); margin-top: 20px; margin-bottom: 5px; font-size: 0.95rem; }
+        .answer { margin-bottom: 20px; }
+        .highlight { background: var(--teal-soft); border-left: 3px solid var(--teal-dark); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 16px 0; font-size: 0.88rem; color: var(--text-secondary); }
+        .important { background: rgba(220, 53, 69, 0.06); border-left: 3px solid #dc3545; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 16px 0; font-size: 0.88rem; color: var(--text-secondary); }
+        .footer-copy { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 48px; }
+        .footer-copy a { color: var(--teal-dark); }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --teal: #19C7C7;
+                --teal-dark: #19C7C7;
+                --teal-soft: rgba(25, 199, 199, 0.12);
+                --bg-page: #000000;
+                --bg-card: #121212;
+                --border: rgba(255, 255, 255, 0.08);
+                --border-card: rgba(25, 199, 199, 0.20);
+                --text-primary: #FFFFFF;
+                --text-secondary: #B0BEC5;
+                --text-muted: #78909C;
+            }
+            tr:nth-child(even) { background-color: #1A1A1A; }
+            th { background-color: #19C7C7; color: #000000; }
+            .highlight { background: rgba(25, 199, 199, 0.12); }
+            .important { background: rgba(255, 107, 107, 0.12); border-left-color: #FF6B6B; }
         }
-        h2 {
-            color: #111827;
-            margin-top: 30px;
-            border-bottom: 1px solid #E2E8F0;
-            padding-bottom: 5px;
-        }
-        .question {
-            font-weight: bold;
-            color: #111827;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-        .answer {
-            margin-bottom: 20px;
-            color: #4B5563;
-        }
-        ol {
-            padding-left: 20px;
-        }
-        ol li {
-            margin: 8px 0;
-            color: #4B5563;
-        }
-        .contact-box {
-            background-color: #EDF7F7;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .highlight {
-            background-color: #EDF7F7;
-            padding: 15px;
-            border-left: 4px solid #0FA3A3;
-            margin: 20px 0;
-        }
-        .important {
-            background-color: #f8d7da;
-            padding: 15px;
-            border-left: 4px solid #dc3545;
-            margin: 20px 0;
-        }
-        .info {
-            background-color: #EDF7F7;
-            padding: 15px;
-            border-left: 4px solid #0FA3A3;
-            margin: 20px 0;
-        }
+        @media (max-width: 600px) { .card { padding: 24px; } }
     </style>
 </head>
 <body>
 
-<h1>Frequently Asked Questions - k<span style="color:#0FA3A3">AI</span>board</h1>
 
-<p><strong>Last updated:</strong> March 26, 2026</p>
-<p><strong>Version:</strong> 3.0</p>
+<main class="content">
+    <h1>Frequently Asked Questions</h1>
+    <p class="subtitle">k<span style="color:#0FA3A3">AI</span>board &mdash; Last updated: March 26, 2026 &mdash; Version: 3.0</p>
 
-<!-- ===== SECTION 1: GETTING STARTED ===== -->
-<h2>1. Getting Started</h2>
+    <div class="card">
+        <h2>1. Getting Started</h2>
 
 <p class="question">Why does kAIboard need the Contacts permission?</p>
 <p class="answer">kAIboard reads your contacts to match the person you're chatting with to their phone number. From the international dialling code of the number (e.g. +49 for Germany) it determines which language to set. Contact names and phone numbers are never stored permanently — they are only used at the moment the language needs to be detected.</p>
@@ -114,7 +109,10 @@
 </div>
 
 <!-- ===== SECTION 2: AUTOMATIC LANGUAGE SWITCHING ===== -->
-<h2>2. Automatic Language Switching</h2>
+    </div>
+
+    <div class="card">
+        <h2>2. Automatic Language Switching</h2>
 
 <p class="question">How does automatic language switching work?</p>
 <div class="answer">
@@ -132,13 +130,16 @@
 <p class="question">Which messaging apps are supported?</p>
 <p class="answer">Over 120 apps, including WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack and many more — including dating apps, ride-hailing, food delivery and marketplaces. It also works with quick replies from notifications and with Google Messages.</p>
 
-<div class="info">
+<div class="highlight">
     <p class="question">Note about Telegram</p>
     <p>Telegram internally handles contact names, nicknames and numeric IDs differently from other messaging apps. Because of this Telegram-specific behaviour, you may occasionally notice a brief flash of the system language when entering or re-entering a chat with a contact detected automatically from the phone number in your address book. The flash resolves quickly and the system sets the correct language immediately afterwards. For contacts to which you've manually assigned a language (via Contact Management or long-pressing the space bar), the language switch should work smoothly and without delay, even on Telegram. This behaviour is caused by the way Telegram communicates contact information to the system and is not a kAIboard issue. In other messaging apps (WhatsApp, Signal, Messenger and others) the language switch should work smoothly for both automatic and manual contacts.</p>
 </div>
 
 <!-- ===== SECTION 3: TRANSLATION ===== -->
-<h2>3. Translation</h2>
+    </div>
+
+    <div class="card">
+        <h2>3. Translation</h2>
 
 <p class="question">How does AI Translation (cloud) work?</p>
 <div class="answer">
@@ -162,7 +163,7 @@
 <div class="answer">
     <p>When translation is active for a contact whose language uses a non-Latin alphabet (Russian, Ukrainian, Greek, Georgian), the keyboard automatically switches to the layout of your device's system language (e.g. English) so you can type comfortably. You type in your language and translation takes care of converting the text into the contact's alphabet and language when you press Enter. Autocorrect and suggestions also adapt to the language of the displayed layout.</p>
     <p>When translation is turned off for the same contact (with a second long-press on Enter), the layout automatically reverts to the contact's native alphabet (Cyrillic, Greek or Georgian).</p>
-    <div class="info">
+    <div class="highlight">
         <strong>Note:</strong> This feature is present and functional, but is being consolidated through user feedback. In some cases, the automatic layout switch may not work exactly as expected. If you encounter issues, contact us at <a href="mailto:support@kaiboard.eu">support@kaiboard.eu</a> — every report helps us improve.
     </div>
 </div>
@@ -177,7 +178,10 @@
 </div>
 
 <!-- ===== SECTION 4: KEYBOARD AND TYPING ===== -->
-<h2>4. Keyboard and Typing</h2>
+    </div>
+
+    <div class="card">
+        <h2>4. Keyboard and Typing</h2>
 
 <p class="question">How does autocorrect work?</p>
 <div class="answer">
@@ -218,7 +222,10 @@
 </div>
 
 <!-- ===== SECTION 5: PRIVACY AND DATA ===== -->
-<h2>5. Privacy and Data</h2>
+    </div>
+
+    <div class="card">
+        <h2>5. Privacy and Data</h2>
 
 <p class="question">What data does kAIboard collect?</p>
 <div class="answer">
@@ -248,7 +255,10 @@
 </div>
 
 <!-- ===== SECTION 6: PRICING AND SUBSCRIPTION ===== -->
-<h2>6. Pricing and Subscription</h2>
+    </div>
+
+    <div class="card">
+        <h2>6. Pricing and Subscription</h2>
 
 <p class="question">How much does kAIboard cost?</p>
 <p class="answer">kAIboard is a one-time purchase for €2.39 (tax included). It includes all core features: automatic language switching, intelligent autocorrect, next-word prediction, free on-device translation (ML Kit), keyboard shortcuts, customisable haptic feedback, emoji picker, contact language management and local backup.</p>
@@ -276,7 +286,10 @@
 <p class="answer">kAIboard offers two backup options. All users can create a local backup of their settings and learning data. Subscribers can also back up to their personal Google Drive. In both cases, the translation token balance is always synced from the cloud — it is never saved in the backup file, to prevent duplication.</p>
 
 <!-- ===== SECTION 7: TROUBLESHOOTING ===== -->
-<h2>7. Troubleshooting</h2>
+    </div>
+
+    <div class="card">
+        <h2>7. Troubleshooting</h2>
 
 <p class="question">The keyboard doesn't switch language automatically.</p>
 <div class="answer">
@@ -305,19 +318,20 @@
 
 <p class="question">On-device translation doesn't show available languages.</p>
 <p class="answer">You first need to download at least one language pack from the <strong>Translation Packs</strong> screen in Settings. Each pack is about 30 MB. Once downloaded, the language will appear in the selection grid when you long-press a suggestion in the prediction bar.</p>
+    </div>
 
-<div class="contact-box">
-    <p>For questions, GDPR requests or reports:</p>
+    <div class="card">
+        <h2>Contact</h2>
+        <p>For questions, GDPR requests or reports:</p>
     <p><strong>Email:</strong> <a href="mailto:support@kaiboard.eu">support@kaiboard.eu</a></p>
     <p><strong>Website:</strong> <a href="https://kaiboard.eu" target="_blank" rel="noopener">kaiboard.eu</a></p>
     <p><strong>Response time:</strong> Within 30 days (Art. 12 GDPR)</p>
     <p style="margin-top: 10px;">&#127757; <a href="https://alessandrof78.github.io/kaiboard-faq/">FAQ in other languages</a></p>
-</div>
+    </div>
 
-<p style="text-align: center; color: #4B5563; margin-top: 50px;">
-    &copy; 2025-2026 k<span style="color:#0FA3A3">AI</span>board by Alessandro Faedda. All rights reserved.<br>
-    Compliant with the GDPR (EU Regulation 2016/679)
-</p>
+    <p class="footer-copy">&copy; 2025-2026 k<span style="color:#0FA3A3">AI</span>board by Alessandro Faedda. All rights reserved.<br>
+    Compliant with the GDPR (EU Regulation 2016/679)</p>
+</main>
 
 </body>
 </html>

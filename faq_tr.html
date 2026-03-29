@@ -4,80 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Sıkça sorulan sorular - kAIboard</title>
+    <title>Sıkça sorulan sorular &mdash; kAIboard</title>
     <style>
-        body {
-            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #111827;
-            background-color: #F4F7FA;
+        :root {
+            --teal: #19C7C7;
+            --teal-dark: #0FA3A3;
+            --teal-soft: rgba(25, 199, 199, 0.08);
+            --bg-page: #F0F6F6;
+            --bg-card: #FFFFFF;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-card: rgba(25, 199, 199, 0.15);
+            --text-primary: #1A2E35;
+            --text-secondary: #4A6068;
+            --text-muted: #8A9EA6;
+            --font-main: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --max-width: 800px;
         }
-        h1 {
-            color: #111827;
-            border-bottom: 3px solid #0FA3A3;
-            padding-bottom: 10px;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        a { color: var(--teal-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--teal); }
+        .content { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+        h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+        .subtitle { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 40px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; padding: 36px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); overflow: hidden; }
+        .card h2 { font-size: 1.15rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 16px; letter-spacing: -0.01em; }
+        .card h3 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-top: 20px; margin-bottom: 10px; }
+        .card p, .card li { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px; }
+        .card ul, .card ol { padding-left: 20px; margin-bottom: 12px; }
+        .card li { margin-bottom: 6px; }
+        .card ul li { list-style: disc; }
+        .card ol li { list-style: decimal; }
+        .question { font-weight: 700; color: var(--text-primary); margin-top: 20px; margin-bottom: 5px; font-size: 0.95rem; }
+        .answer { margin-bottom: 20px; }
+        .highlight { background: var(--teal-soft); border-left: 3px solid var(--teal-dark); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 16px 0; font-size: 0.88rem; color: var(--text-secondary); }
+        .important { background: rgba(220, 53, 69, 0.06); border-left: 3px solid #dc3545; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 16px 0; font-size: 0.88rem; color: var(--text-secondary); }
+        .footer-copy { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 48px; }
+        .footer-copy a { color: var(--teal-dark); }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --teal: #19C7C7;
+                --teal-dark: #19C7C7;
+                --teal-soft: rgba(25, 199, 199, 0.12);
+                --bg-page: #000000;
+                --bg-card: #121212;
+                --border: rgba(255, 255, 255, 0.08);
+                --border-card: rgba(25, 199, 199, 0.20);
+                --text-primary: #FFFFFF;
+                --text-secondary: #B0BEC5;
+                --text-muted: #78909C;
+            }
+            tr:nth-child(even) { background-color: #1A1A1A; }
+            th { background-color: #19C7C7; color: #000000; }
+            .highlight { background: rgba(25, 199, 199, 0.12); }
+            .important { background: rgba(255, 107, 107, 0.12); border-left-color: #FF6B6B; }
         }
-        h2 {
-            color: #111827;
-            margin-top: 30px;
-            border-bottom: 1px solid #E2E8F0;
-            padding-bottom: 5px;
-        }
-        .question {
-            font-weight: bold;
-            color: #111827;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-        .answer {
-            margin-bottom: 20px;
-            color: #4B5563;
-        }
-        ol {
-            padding-left: 20px;
-        }
-        ol li {
-            margin: 8px 0;
-            color: #4B5563;
-        }
-        .contact-box {
-            background-color: #EDF7F7;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .highlight {
-            background-color: #EDF7F7;
-            padding: 15px;
-            border-left: 4px solid #0FA3A3;
-            margin: 20px 0;
-        }
-        .important {
-            background-color: #f8d7da;
-            padding: 15px;
-            border-left: 4px solid #dc3545;
-            margin: 20px 0;
-        }
-        .info {
-            background-color: #EDF7F7;
-            padding: 15px;
-            border-left: 4px solid #0FA3A3;
-            margin: 20px 0;
-        }
+        @media (max-width: 600px) { .card { padding: 24px; } }
     </style>
 </head>
 <body>
 
-<h1>Sıkça sorulan sorular - k<span style="color:#0FA3A3">AI</span>board</h1>
 
-<p><strong>Son güncelleme:</strong> 26 Mart 2026</p>
-<p><strong>Sürüm:</strong> 3.0</p>
+<main class="content">
+    <h1>Sıkça sorulan sorular</h1>
+    <p class="subtitle">k<span style="color:#0FA3A3">AI</span>board &mdash; Son güncelleme: 26 Mart 2026 &mdash; Sürüm: 3.0</p>
 
-<!-- ===== BÖLÜM 1: BAŞLARKEN ===== -->
-<h2>1. Başlarken</h2>
+    <div class="card">
+        <h2>1. Başlarken</h2>
 
 <p class="question">kAIboard neden Kişiler iznine ihtiyaç duyuyor?</p>
 <p class="answer">kAIboard, sohbet ettiğiniz kişiyi telefon numarasıyla eşleştirmek için rehberinizi okur. Uluslararası alan kodundan (örn. +90 Türkiye için) hangi dile geçileceğini belirler. Kişi adları ve telefon numaraları hiçbir zaman kalıcı olarak saklanmaz &mdash; yalnızca dili algılamak için o anda kullanılır.</p>
@@ -114,7 +109,10 @@
 </div>
 
 <!-- ===== BÖLÜM 2: OTOMATİK DİL DEĞİŞTİRME ===== -->
-<h2>2. Otomatik dil değiştirme</h2>
+    </div>
+
+    <div class="card">
+        <h2>2. Otomatik dil değiştirme</h2>
 
 <p class="question">Otomatik dil değiştirme nasıl çalışır?</p>
 <div class="answer">
@@ -132,13 +130,16 @@
 <p class="question">Hangi mesajlaşma uygulamaları destekleniyor?</p>
 <p class="answer">WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack ve daha birçoğu dahil olmak üzere 120'den fazla uygulama &mdash; tanışma, ulaşım, yemek teslimatı ve pazar yeri uygulamaları da dahil. Bildirimlerden gelen hızlı yanıtlarla ve Google Messages ile de çalışır.</p>
 
-<div class="info">
+<div class="highlight">
     <p class="question">Telegram hakkında not</p>
     <p>Telegram, kişi adlarını, takma adları ve sayısal kimlikleri dahili olarak diğer mesajlaşma uygulamalarından farklı yönetir. Telegram'ın bu özel davranışı nedeniyle, rehberinizdeki telefon numarasından otomatik olarak algılanan bir kişiyle sohbete girerken veya tekrar girerken zaman zaman sistem dilinin kısa bir yanıp sönmesini fark edebilirsiniz. Yanıp sönme hızla düzelir ve sistem kısa süre sonra doğru dili ayarlar. Manuel olarak dil atadığınız kişiler için (Kişi Yönetimi ekranı veya boşluk çubuğuna uzun basma yoluyla), dil değiştirme Telegram'da bile sorunsuz ve gecikmesiz çalışmalıdır. Bu davranış, Telegram'ın kişi bilgilerini sisteme iletme biçiminden kaynaklanır ve kAIboard'un bir sorunu değildir. Diğer mesajlaşma uygulamalarında (WhatsApp, Signal, Messenger ve diğerleri), dil değiştirme hem otomatik hem de manuel kişiler için sorunsuz çalışmalıdır.</p>
 </div>
 
 <!-- ===== BÖLÜM 3: ÇEVİRİ ===== -->
-<h2>3. Çeviri</h2>
+    </div>
+
+    <div class="card">
+        <h2>3. Çeviri</h2>
 
 <p class="question">AI Çeviri (cloud) nasıl çalışır?</p>
 <div class="answer">
@@ -162,7 +163,7 @@
 <div class="answer">
     <p>Dili Latin olmayan bir alfabe kullanan bir kişi için çeviri aktif olduğunda (Rusça, Ukraynaca, Yunanca, Gürcüce), klavye rahatça yazabilmeniz için otomatik olarak cihazınızın sistem dili düzenine (örn. Türkçe) geçer. Kendi dilinizde yazarsınız ve çeviri, Enter'a bastığınızda metni kişinin alfabesine ve diline dönüştürmeyi üstlenir. Otomatik düzeltme ve öneriler de görüntülenen düzenin diline uyum sağlar.</p>
     <p>Aynı kişi için çeviri devre dışı bırakıldığında (ikinci bir uzun Enter basışıyla), düzen otomatik olarak kişinin yerel alfabesine (Kiril, Yunan veya Gürcü) geri döner.</p>
-    <div class="info">
+    <div class="highlight">
         <strong>Not:</strong> Bu özellik mevcuttur ve çalışmaktadır, ancak kullanıcı geri bildirimlerine dayalı olarak konsolidasyon aşamasındadır. Bazı durumlarda otomatik düzen değiştirme beklendiği gibi çalışmayabilir. Sorunlarla karşılaşırsanız <a href="mailto:support@kaiboard.eu">support@kaiboard.eu</a> adresinden bizimle iletişime geçin &mdash; her bildirim iyileştirmemize yardımcı olur.
     </div>
 </div>
@@ -177,7 +178,10 @@
 </div>
 
 <!-- ===== BÖLÜM 4: KLAVYE VE YAZMA ===== -->
-<h2>4. Klavye ve yazma</h2>
+    </div>
+
+    <div class="card">
+        <h2>4. Klavye ve yazma</h2>
 
 <p class="question">Otomatik düzeltme nasıl çalışır?</p>
 <div class="answer">
@@ -218,7 +222,10 @@
 </div>
 
 <!-- ===== BÖLÜM 5: GİZLİLİK VE VERİLER ===== -->
-<h2>5. Gizlilik ve veriler</h2>
+    </div>
+
+    <div class="card">
+        <h2>5. Gizlilik ve veriler</h2>
 
 <p class="question">kAIboard hangi verileri toplar?</p>
 <div class="answer">
@@ -248,7 +255,10 @@
 </div>
 
 <!-- ===== BÖLÜM 6: FİYATLANDIRMA VE ABONELİK ===== -->
-<h2>6. Fiyatlandırma ve abonelik</h2>
+    </div>
+
+    <div class="card">
+        <h2>6. Fiyatlandırma ve abonelik</h2>
 
 <p class="question">kAIboard'un fiyatı nedir?</p>
 <p class="answer">kAIboard, &euro;2,39 tutarında tek seferlik bir satın almadır (vergiler dahil). Tüm temel özellikleri içerir: otomatik dil değiştirme, akıllı otomatik düzeltme, sonraki kelime tahmini, ücretsiz cihaz üzerinde çeviri (ML Kit), klavye kısayolları, özelleştirilebilir dokunsal geri bildirim, emoji seçici, kişi dil yönetimi ve yerel yedekleme.</p>
@@ -276,7 +286,10 @@
 <p class="answer">kAIboard iki yedekleme seçeneği sunar. Tüm kullanıcılar ayarlarının ve öğrenme verilerinin yerel bir yedeğini oluşturabilir. Aboneler ayrıca kişisel Google Drive'larına yedekleme yapabilir. Her iki durumda da çeviri token bakiyeniz her zaman buluttan senkronize edilir &mdash; çoğaltmayı önlemek için yedek dosyasında asla saklanmaz.</p>
 
 <!-- ===== BÖLÜM 7: SORUN GİDERME ===== -->
-<h2>7. Sorun giderme</h2>
+    </div>
+
+    <div class="card">
+        <h2>7. Sorun giderme</h2>
 
 <p class="question">Klavye dili otomatik olarak değiştirmiyor.</p>
 <div class="answer">
@@ -305,19 +318,20 @@
 
 <p class="question">Cihaz üzerinde çeviri kullanılabilir dilleri göstermiyor.</p>
 <p class="answer">Önce Ayarlar'daki <strong>Çeviri Paketleri</strong> ekranından en az bir dil paketi indirmeniz gerekir. Her paket yaklaşık 30 MB'dir. İndirildikten sonra, tahmin çubuğundaki bir öneriye uzun bastığınızda dil seçim ızgarasında görünecektir.</p>
+    </div>
 
-<div class="contact-box">
-    <p>Sorular, GDPR talepleri veya raporlar için:</p>
+    <div class="card">
+        <h2>İletişim</h2>
+        <p>Sorular, GDPR talepleri veya raporlar için:</p>
     <p><strong>E-posta:</strong> <a href="mailto:support@kaiboard.eu">support@kaiboard.eu</a></p>
     <p><strong>Web sitesi:</strong> <a href="https://kaiboard.eu" target="_blank" rel="noopener">kaiboard.eu</a></p>
     <p><strong>Yanıt süresi:</strong> 30 gün içinde (Mad. 12 GDPR)</p>
     <p style="margin-top: 10px;">&#127757; <a href="https://alessandrof78.github.io/kaiboard-faq/">Diğer dillerde SSS</a></p>
-</div>
+    </div>
 
-<p style="text-align: center; color: #4B5563; margin-top: 50px;">
-    &copy; 2025-2026 k<span style="color:#0FA3A3">AI</span>board by Alessandro Faedda. Tüm hakları saklıdır.<br>
-    KVKK (AB Yönetmeliği 2016/679) ile uyumludur
-</p>
+    <p class="footer-copy">&copy; 2025-2026 k<span style="color:#0FA3A3">AI</span>board by Alessandro Faedda. Tüm hakları saklıdır.<br>
+    KVKK (AB Yönetmeliği 2016/679) ile uyumludur</p>
+</main>
 
 </body>
 </html>

@@ -1,83 +1,78 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Συχνές ερωτήσεις - kAIboard</title>
+    <title>Συχνές ερωτήσεις &mdash; kAIboard</title>
     <style>
-        body {
-            font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #111827;
-            background-color: #F4F7FA;
+        :root {
+            --teal: #19C7C7;
+            --teal-dark: #0FA3A3;
+            --teal-soft: rgba(25, 199, 199, 0.08);
+            --bg-page: #F0F6F6;
+            --bg-card: #FFFFFF;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-card: rgba(25, 199, 199, 0.15);
+            --text-primary: #1A2E35;
+            --text-secondary: #4A6068;
+            --text-muted: #8A9EA6;
+            --font-main: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --max-width: 800px;
         }
-        h1 {
-            color: #111827;
-            border-bottom: 3px solid #0FA3A3;
-            padding-bottom: 10px;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        a { color: var(--teal-dark); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--teal); }
+        .content { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 80px; }
+        h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+        .subtitle { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 40px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; padding: 36px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); overflow: hidden; }
+        .card h2 { font-size: 1.15rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 16px; letter-spacing: -0.01em; }
+        .card h3 { font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-top: 20px; margin-bottom: 10px; }
+        .card p, .card li { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px; }
+        .card ul, .card ol { padding-left: 20px; margin-bottom: 12px; }
+        .card li { margin-bottom: 6px; }
+        .card ul li { list-style: disc; }
+        .card ol li { list-style: decimal; }
+        .question { font-weight: 700; color: var(--text-primary); margin-top: 20px; margin-bottom: 5px; font-size: 0.95rem; }
+        .answer { margin-bottom: 20px; }
+        .highlight { background: var(--teal-soft); border-left: 3px solid var(--teal-dark); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 16px 0; font-size: 0.88rem; color: var(--text-secondary); }
+        .important { background: rgba(220, 53, 69, 0.06); border-left: 3px solid #dc3545; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 16px 0; font-size: 0.88rem; color: var(--text-secondary); }
+        .footer-copy { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 48px; }
+        .footer-copy a { color: var(--teal-dark); }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --teal: #19C7C7;
+                --teal-dark: #19C7C7;
+                --teal-soft: rgba(25, 199, 199, 0.12);
+                --bg-page: #000000;
+                --bg-card: #121212;
+                --border: rgba(255, 255, 255, 0.08);
+                --border-card: rgba(25, 199, 199, 0.20);
+                --text-primary: #FFFFFF;
+                --text-secondary: #B0BEC5;
+                --text-muted: #78909C;
+            }
+            tr:nth-child(even) { background-color: #1A1A1A; }
+            th { background-color: #19C7C7; color: #000000; }
+            .highlight { background: rgba(25, 199, 199, 0.12); }
+            .important { background: rgba(255, 107, 107, 0.12); border-left-color: #FF6B6B; }
         }
-        h2 {
-            color: #111827;
-            margin-top: 30px;
-            border-bottom: 1px solid #E2E8F0;
-            padding-bottom: 5px;
-        }
-        .question {
-            font-weight: bold;
-            color: #111827;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-        .answer {
-            margin-bottom: 20px;
-            color: #4B5563;
-        }
-        ol {
-            padding-left: 20px;
-        }
-        ol li {
-            margin: 8px 0;
-            color: #4B5563;
-        }
-        .contact-box {
-            background-color: #EDF7F7;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .highlight {
-            background-color: #EDF7F7;
-            padding: 15px;
-            border-left: 4px solid #0FA3A3;
-            margin: 20px 0;
-        }
-        .important {
-            background-color: #f8d7da;
-            padding: 15px;
-            border-left: 4px solid #dc3545;
-            margin: 20px 0;
-        }
-        .info {
-            background-color: #EDF7F7;
-            padding: 15px;
-            border-left: 4px solid #0FA3A3;
-            margin: 20px 0;
-        }
+        @media (max-width: 600px) { .card { padding: 24px; } }
     </style>
 </head>
 <body>
 
-<h1>Συχνές ερωτήσεις - k<span style="color:#0FA3A3">AI</span>board</h1>
 
-<p><strong>Τελευταία ενημέρωση:</strong> 26 Μαρτίου 2026</p>
-<p><strong>Έκδοση:</strong> 3.0</p>
+<main class="content">
+    <h1>Συχνές ερωτήσεις</h1>
+    <p class="subtitle">k<span style="color:#0FA3A3">AI</span>board &mdash; Τελευταία ενημέρωση: 26 Μαρτίου 2026 &mdash; Έκδοση: 3.0</p>
 
-<!-- ===== ΕΝΟΤΗΤΑ 1: ΞΕΚΙΝΩΝΤΑΣ ===== -->
-<h2>1. Ξεκινώντας</h2>
+    <div class="card">
+        <h2>1. Ξεκινώντας</h2>
 
 <p class="question">Γιατί το kAIboard χρειάζεται την άδεια Επαφών;</p>
 <p class="answer">Το kAIboard διαβάζει τις επαφές σου για να συσχετίσει το άτομο με το οποίο συνομιλείς με τον αριθμό τηλεφώνου του. Από τον διεθνή κωδικό του αριθμού (π.χ. +49 για τη Γερμανία) προσδιορίζει τη γλώσσα που πρέπει να οριστεί. Τα ονόματα και οι αριθμοί τηλεφώνου των επαφών δεν αποθηκεύονται ποτέ μόνιμα — χρησιμοποιούνται μόνο τη στιγμή που χρειάζεται να ανιχνευτεί η γλώσσα.</p>
@@ -114,7 +109,10 @@
 </div>
 
 <!-- ===== ΕΝΟΤΗΤΑ 2: ΑΥΤΟΜΑΤΗ ΑΛΛΑΓΗ ΓΛΩΣΣΑΣ ===== -->
-<h2>2. Αυτόματη αλλαγή γλώσσας</h2>
+    </div>
+
+    <div class="card">
+        <h2>2. Αυτόματη αλλαγή γλώσσας</h2>
 
 <p class="question">Πώς λειτουργεί η αυτόματη αλλαγή γλώσσας;</p>
 <div class="answer">
@@ -132,13 +130,16 @@
 <p class="question">Ποιες εφαρμογές μηνυμάτων υποστηρίζονται;</p>
 <p class="answer">Πάνω από 120 εφαρμογές, συμπεριλαμβανομένων WhatsApp, Telegram, Signal, Facebook Messenger, Viber, WeChat, Discord, Slack και πολλών άλλων — συμπεριλαμβανομένων εφαρμογών γνωριμιών, ride-hailing, παραγγελίας φαγητού και marketplace. Λειτουργεί επίσης με τις γρήγορες απαντήσεις από ειδοποιήσεις και με το Google Messages.</p>
 
-<div class="info">
+<div class="highlight">
     <p class="question">Σημείωση για το Telegram</p>
     <p>Το Telegram διαχειρίζεται εσωτερικά τα ονόματα επαφών, τα ψευδώνυμα και τα αριθμητικά αναγνωριστικά διαφορετικά από άλλες εφαρμογές μηνυμάτων. Λόγω αυτής της συγκεκριμένης συμπεριφοράς του Telegram, μπορεί περιστασιακά να παρατηρήσεις ένα σύντομο flash της γλώσσας συστήματος όταν εισέρχεσαι ή επανεισέρχεσαι σε μια συνομιλία με επαφή που ανιχνεύτηκε αυτόματα από τον τηλεφωνικό αριθμό. Το flash επιλύεται γρήγορα και το σύστημα ορίζει τη σωστή γλώσσα αμέσως μετά. Για επαφές στις οποίες έχεις αντιστοιχίσει χειροκίνητα μια γλώσσα (μέσω της Διαχείρισης Επαφών ή του παρατεταμένου πατήματος στο πλήκτρο διαστήματος), η αλλαγή γλώσσας θα πρέπει να λειτουργεί ομαλά και χωρίς καθυστερήσεις, ακόμα και στο Telegram. Αυτή η συμπεριφορά προκαλείται από τον τρόπο που το Telegram επικοινωνεί τις πληροφορίες επαφής στο σύστημα και δεν είναι πρόβλημα του kAIboard. Στις άλλες εφαρμογές μηνυμάτων (WhatsApp, Signal, Messenger και άλλες) η αλλαγή γλώσσας θα πρέπει να λειτουργεί ομαλά τόσο για τις αυτόματες όσο και για τις χειροκίνητες επαφές.</p>
 </div>
 
 <!-- ===== ΕΝΟΤΗΤΑ 3: ΜΕΤΑΦΡΑΣΗ ===== -->
-<h2>3. Μετάφραση</h2>
+    </div>
+
+    <div class="card">
+        <h2>3. Μετάφραση</h2>
 
 <p class="question">Πώς λειτουργεί η AI Μετάφραση (cloud);</p>
 <div class="answer">
@@ -162,7 +163,7 @@
 <div class="answer">
     <p>Όταν η μετάφραση είναι ενεργή για μια επαφή της οποίας η γλώσσα χρησιμοποιεί μη λατινικό αλφάβητο (ρωσικά, ουκρανικά, ελληνικά, γεωργιανά), το πληκτρολόγιο αλλάζει αυτόματα στη διάταξη της γλώσσας συστήματος της συσκευής σου (π.χ. ελληνικά) για να πληκτρολογείς άνετα. Πληκτρολογείς στη γλώσσα σου και η μετάφραση αναλαμβάνει τη μετατροπή του κειμένου στο αλφάβητο και τη γλώσσα της επαφής όταν πατήσεις Enter. Η αυτοδιόρθωση και οι προτάσεις προσαρμόζονται επίσης στη γλώσσα της εμφανιζόμενης διάταξης.</p>
     <p>Όταν η μετάφραση απενεργοποιηθεί για την ίδια επαφή (με ένα δεύτερο παρατεταμένο πάτημα στο Enter), η διάταξη επιστρέφει αυτόματα στο εγγενές αλφάβητο της επαφής (κυριλλικό, ελληνικό ή γεωργιανό).</p>
-    <div class="info">
+    <div class="highlight">
         <strong>Σημείωση:</strong> Αυτή η λειτουργία υπάρχει και είναι λειτουργική, αλλά βρίσκεται σε φάση εδραίωσης μέσω ανατροφοδότησης χρηστών. Σε ορισμένες περιπτώσεις, η αυτόματη αλλαγή διάταξης μπορεί να μην λειτουργήσει ακριβώς όπως αναμένεται. Αν αντιμετωπίσεις προβλήματα, επικοινώνησε μαζί μας στο <a href="mailto:support@kaiboard.eu">support@kaiboard.eu</a> — κάθε αναφορά μας βοηθά να βελτιωθούμε.
     </div>
 </div>
@@ -177,7 +178,10 @@
 </div>
 
 <!-- ===== ΕΝΟΤΗΤΑ 4: ΠΛΗΚΤΡΟΛΟΓΙΟ ΚΑΙ ΠΛΗΚΤΡΟΛΟΓΗΣΗ ===== -->
-<h2>4. Πληκτρολόγιο και πληκτρολόγηση</h2>
+    </div>
+
+    <div class="card">
+        <h2>4. Πληκτρολόγιο και πληκτρολόγηση</h2>
 
 <p class="question">Πώς λειτουργεί η αυτοδιόρθωση;</p>
 <div class="answer">
@@ -218,7 +222,10 @@
 </div>
 
 <!-- ===== ΕΝΟΤΗΤΑ 5: ΑΠΟΡΡΗΤΟ ΚΑΙ ΔΕΔΟΜΕΝΑ ===== -->
-<h2>5. Απόρρητο και δεδομένα</h2>
+    </div>
+
+    <div class="card">
+        <h2>5. Απόρρητο και δεδομένα</h2>
 
 <p class="question">Ποια δεδομένα συλλέγει το kAIboard;</p>
 <div class="answer">
@@ -248,7 +255,10 @@
 </div>
 
 <!-- ===== ΕΝΟΤΗΤΑ 6: ΤΙΜΕΣ ΚΑΙ ΣΥΝΔΡΟΜΗ ===== -->
-<h2>6. Τιμές και συνδρομή</h2>
+    </div>
+
+    <div class="card">
+        <h2>6. Τιμές και συνδρομή</h2>
 
 <p class="question">Πόσο κοστίζει το kAIboard;</p>
 <p class="answer">Το kAIboard είναι μια εφάπαξ αγορά €2,39 (συμπεριλαμβανομένου ΦΠΑ). Περιλαμβάνει όλες τις κύριες λειτουργίες: αυτόματη αλλαγή γλώσσας, ευφυής αυτοδιόρθωση, πρόβλεψη λέξεων, δωρεάν μετάφραση στη συσκευή (ML Kit), συντομεύσεις πληκτρολογίου, προσαρμόσιμη απτική ανάδραση, επιλογέας emoji, διαχείριση γλωσσών επαφών και τοπικό αντίγραφο ασφαλείας.</p>
@@ -276,7 +286,10 @@
 <p class="answer">Το kAIboard προσφέρει δύο επιλογές αντιγράφων ασφαλείας. Όλοι οι χρήστες μπορούν να δημιουργήσουν τοπικό αντίγραφο ασφαλείας των ρυθμίσεων και δεδομένων εκμάθησής τους. Οι συνδρομητές μπορούν επίσης να δημιουργήσουν αντίγραφο ασφαλείας στο προσωπικό τους Google Drive. Και στις δύο περιπτώσεις, το υπόλοιπο token μετάφρασης συγχρονίζεται πάντα από το cloud — δεν αποθηκεύεται ποτέ στο αρχείο αντιγράφου ασφαλείας, για την αποτροπή διπλοεγγραφών.</p>
 
 <!-- ===== ΕΝΟΤΗΤΑ 7: ΑΝΤΙΜΕΤΩΠΙΣΗ ΠΡΟΒΛΗΜΑΤΩΝ ===== -->
-<h2>7. Αντιμετώπιση προβλημάτων</h2>
+    </div>
+
+    <div class="card">
+        <h2>7. Αντιμετώπιση προβλημάτων</h2>
 
 <p class="question">Το πληκτρολόγιο δεν αλλάζει γλώσσα αυτόματα.</p>
 <div class="answer">
@@ -305,19 +318,20 @@
 
 <p class="question">Η μετάφραση στη συσκευή δεν δείχνει διαθέσιμες γλώσσες.</p>
 <p class="answer">Πρέπει πρώτα να κατεβάσεις τουλάχιστον ένα πακέτο γλώσσας από την οθόνη <strong>Πακέτα Μετάφρασης</strong> στις Ρυθμίσεις. Κάθε πακέτο είναι περίπου 30 MB. Μετά τη λήψη, η γλώσσα θα εμφανιστεί στο πλέγμα επιλογής όταν κρατήσεις πατημένη μια πρόταση στη γραμμή προτάσεων.</p>
+    </div>
 
-<div class="contact-box">
-    <p>Για ερωτήσεις, αιτήματα GDPR ή αναφορές:</p>
+    <div class="card">
+        <h2>Επικοινωνία</h2>
+        <p>Για ερωτήσεις, αιτήματα GDPR ή αναφορές:</p>
     <p><strong>Email:</strong> <a href="mailto:support@kaiboard.eu">support@kaiboard.eu</a></p>
     <p><strong>Ιστότοπος:</strong> <a href="https://kaiboard.eu" target="_blank" rel="noopener">kaiboard.eu</a></p>
     <p><strong>Χρόνος απάντησης:</strong> Εντός 30 ημερών (Άρθρο 12 GDPR)</p>
     <p style="margin-top: 10px;">&#127757; <a href="https://alessandrof78.github.io/kaiboard-faq/">FAQ σε άλλες γλώσσες</a></p>
-</div>
+    </div>
 
-<p style="text-align: center; color: #4B5563; margin-top: 50px;">
-    &copy; 2025-2026 k<span style="color:#0FA3A3">AI</span>board by Alessandro Faedda. Με επιφύλαξη παντός δικαιώματος.<br>
-    Συμμόρφωση με τον GDPR (Κανονισμός ΕΕ 2016/679)
-</p>
+    <p class="footer-copy">&copy; 2025-2026 k<span style="color:#0FA3A3">AI</span>board by Alessandro Faedda. Με επιφύλαξη παντός δικαιώματος.<br>
+    Συμμόρφωση με τον GDPR (Κανονισμός ΕΕ 2016/679)</p>
+</main>
 
 </body>
 </html>
